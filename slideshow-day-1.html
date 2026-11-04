@@ -1,0 +1,115 @@
+<!DOCTYPE html>
+<html lang="en"> 
+<head> 
+    <title>Handmade Websites Day 1</title>  
+    <link rel="stylesheet" type="text/css" href="code-sandbox.css">
+    <script src="prism.js"></script>
+    <style type="text/css"> 
+
+        /* --- GOOGLE FONTS IMPORT --- */
+        @import url('https://fonts.googleapis.com/css2?family=Geist+Pixel&family=IBM+Plex+Mono:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;1,100;1,200;1,300;1,400;1,500;1,600;1,700&family=IBM+Plex+Sans:ital,wght@0,100..700;1,100..700&family=IBM+Plex+Serif:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;1,100;1,200;1,300;1,400;1,500;1,600;1,700&family=Redaction+50:ital,wght@0,400;0,700;1,400&display=swap');
+        /* --- GOOGLE FONTS IMPORT --- */
+
+        body {
+            font-family: "Geist Pixel", monospace;
+            background: lavenderblush;
+            margin: 0;
+            overflow: hidden;
+        }
+
+        h1 {
+            font-family: "Geist Pixel", serif;
+            text-align: center;
+            font-size: 2.5rem;
+            margin: 1rem auto;
+        }
+
+        h2 {
+            font-family: "Geist Pixel", monospace;
+        }
+
+        .slideshow {
+            scrollbar-width: none;
+            display: flex;
+            overflow-x: scroll;
+            scroll-snap-type: x mandatory;   /* Forces horizontal snapping */
+            scroll-behavior: smooth;
+            width: 100%;
+            margin: 0 auto;
+        }
+
+        div.slide {
+            padding: 1rem 2rem;
+            box-sizing: border-box;
+            background: lavenderblush;
+            scroll-snap-align: start;
+            overflow-y: auto;
+            flex: 0 0 100%;
+            width: 100%;
+            scroll-snap-stop: always; 
+            scrollbar-width: none;
+        }
+
+        .cover h1 {
+            text-align: left;
+            margin: 0 auto;
+        }
+
+        .cover p {
+            text-align: center;
+            font-size: 2rem;
+        }
+
+        div.cover {
+            background: lavenderblush;
+            color: black;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            margin-top: 0;
+        }
+
+        iframe {
+            height: 450px;
+            width: 85%;
+        }
+
+        #first-website {
+            background-color: white;
+            padding: 30px;
+            margin: 0 auto;
+        }
+
+    </style> 
+</head>
+<body>
+    <div class="slideshow">
+        <div class="slide cover">
+            <h1>&lt;h1><br>&emsp;Welcome to Handmade Website Building !<br>&lt;/h1></h1>
+            <p><i>FSS MS ASP, Fall 2026</i></p>
+            <marquee style="width: 200px; margin: 30px auto 0 auto; font-family: 'Redaction 50'; font-size: 2rem;" behavior="alternate">Day 1</marquee>
+        </div>
+
+        <div class="slide">
+            <h1>What is... a website?</h1>
+            <code-sandbox console hidden>
+                <div for="intro"><h2>Some ideas...</h2></div>
+                <textarea for="html"><!-- ... --></textarea>
+            </code-sandbox>
+            
+        </div>
+    
+        <div class="slide">
+            <h1>The first website</h1>
+            <center>
+            <iframe src="https://info.cern.ch/hypertext/WWW/TheProject.html"   id="first-website" title="first-website"></iframe>
+            </center>
+            <p style="text-align: right"><a href="https://info.cern.ch/hypertext/WWW/TheProject.html">https://info.cern.ch/hypertext/WWW/TheProject.html</a></p>
+        </div>
+    </div>
+    <script type="module" src="code-sandbox.js"></script>
+    <script>
+        document.getElementById('first-website').contentWindow.document.body.innerHTML
+    </script>
+</body>
+</html>
