@@ -15,7 +15,7 @@
         }
 
         h1 {
-            font-family: "Geist Pixel", serif;
+            font-family: "Redaction 50", serif;
             text-align: center;
             font-size: 2.5rem;
             margin: 1rem auto;
@@ -80,6 +80,13 @@
             margin: 0 auto;
         }
 
+        .img-container {
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+        }
+
     </style> 
 </head>
 <body>
@@ -99,7 +106,15 @@
             </code-sandbox>
             
         </div>
-    
+
+        <div class="slide">
+            <h1>The first internet</h1>
+            <div class="img-container">
+                <img src="arpanet-1969.png">
+                <img src="arpanet-1970.png">
+            </div>
+        </div>
+
         <div class="slide">
             <h1>The first website</h1>
             <center>
@@ -107,6 +122,7 @@
             </center>
             <p style="text-align: right"><a href="https://info.cern.ch/hypertext/WWW/TheProject.html">https://info.cern.ch/hypertext/WWW/TheProject.html</a></p>
         </div>
+
     </div>
     <script type="module" src="code-sandbox.js"></script>
     <script>
