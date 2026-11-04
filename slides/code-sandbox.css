@@ -18,13 +18,13 @@ code {
 pre {
 	background-color: white;
 	border: none;
-	border-radius: 0.5em;
 	color: #272727;
 	display: block;
 	line-height: 1.5;
 	margin: 0 0 1.5em;
 	overflow: auto;
 	padding: 0.8125em;
+	border-radius: 0.1em;
 	tab-size: 2;
 	white-space: pre-wrap;
 	word-break: break-all;
@@ -50,11 +50,11 @@ pre code {
  * Wrapper element
  */
 .sandbox {
-	background-color: lavenderblush;
-	color: #272727;
+	background-color: black;
+	color: white;
 	font-family: system-ui, sans-serif;
 	margin-bottom: 1.5em;
-	font-size: 1.3em
+	font-size: 1.1em
 }
 
 .sandbox button {
@@ -135,12 +135,13 @@ pre code {
 
 .sandbox-iframe {
 	aspect-ratio: auto;
-	background-color: #ffffff;
+	background-color: white;
 	height: 100%;
-	width: 100%;
 	min-height: 15em;
 	margin-bottom: 0;
 	padding: 15px;
+	box-sizing: border-box;
+	width: 100%
 }
 
 .sandbox-code details {
@@ -149,8 +150,8 @@ pre code {
 
 .sandbox,
 .sandbox-mirror,
-.sandbox-text,
-.sandbox-iframe {
+.sandbox-text
+{
 	border-radius: 0.25em;
 }
 

@@ -10,8 +10,9 @@
 
         body {
             font-family: "Geist Pixel", monospace;
-            background: snow;
+            background: lavenderblush;
             margin: 0;
+            overflow: hidden;
         }
 
         h1 {
@@ -25,14 +26,13 @@
             font-family: "Geist Pixel", monospace;
         }
 
-        .slideshow {
-            scrollbar-width: none;
+        div.slideshow {
             display: flex;
             overflow-x: scroll;
-            scroll-snap-type: x mandatory;   /* Forces horizontal snapping */
+            scrollbar-width: none;
+            scroll-snap-type: x mandatory;
             scroll-behavior: smooth;
             width: 100%;
-            margin: 0 auto;
         }
 
         div.slide {
@@ -40,12 +40,12 @@
             box-sizing: border-box;
             background: lavenderblush;
             scroll-snap-align: start;
-            overflow-y: scroll;
+            overflow-y: auto;
             flex: 0 0 100%;
-            width: 100%;
+            width: 100vw;
             scroll-snap-stop: always; 
             scrollbar-width: none;
-            height: 100vh;
+            height: 100dvh;
         }
 
         .cover h1 {
@@ -61,7 +61,6 @@
         }
 
         div.cover {
-            background: lavenderblush;
             color: black;
             display: flex;
             flex-direction: column;
@@ -72,19 +71,35 @@
         iframe {
             height: 400px;
             width: 85%;
+            max-width: 100%;
+        }
+
+        figure {
+            max-width: 100vw;
         }
 
         #first-website {
-            background-color: white;
             padding: 30px;
             margin: 0 auto;
+            height: 400px;
+            width: 85%;
+            text-align: center;
         }
 
         .img-container {
             display: flex;
-            flex-direction: column;
+            flex-direction: row;
             justify-content: center;
             align-items: center;
+        }
+
+        .img-container figcaption {
+            text-align: center;
+            font-size: 1.2em;
+        }
+
+        .img-container figure img {
+            width: 100%;
         }
 
     </style> 
@@ -102,25 +117,31 @@
             <code-sandbox console hidden>
                 <div for="intro"><h2>Some ideas...</h2></div>
                 <textarea for="html"><!-- ... --></textarea>
-                <textarea for="css">body { font-size: 2em }</textarea>
+                <textarea for="css">body { font-size: 1.5em }</textarea>
             </code-sandbox>
             
         </div>
 
         <div class="slide">
-            <h1>The first internet</h1>
+            <h1>THE FIRST INTERNET</h1>
             <div class="img-container">
+                <figure>
                 <img src="arpanet-1969.png">
+                <figcaption>ARPANET 1969</figcaption>
+                </figure>
+                <figure>
                 <img src="arpanet-1970.png">
+                <figcaption>ARPANET 1970</figcaption>
+                </figure>
             </div>
         </div>
 
         <div class="slide">
-            <h1>The first website</h1>
-            <center>
-            <iframe src="https://info.cern.ch/hypertext/WWW/TheProject.html"   id="first-website" title="first-website"></iframe>
-            </center>
-            <p style="text-align: right"><a href="https://info.cern.ch/hypertext/WWW/TheProject.html">https://info.cern.ch/hypertext/WWW/TheProject.html</a></p>
+            <h1>THE FIRST WEBSITE</h1>
+            <figure>
+            <iframe src="https://info.cern.ch/hypertext/WWW/TheProject.html"  id="first-website" title="first-website"></iframe>
+            <figcaption style="text-align: center"><a href="https://info.cern.ch/hypertext/WWW/TheProject.html">https://info.cern.ch/hypertext/WWW/TheProject.html</a></figcaption>
+            </figure>
         </div>
 
     </div>
