@@ -54,6 +54,7 @@ pre code {
 	color: #272727;
 	font-family: system-ui, sans-serif;
 	margin-bottom: 1.5em;
+	font-size: 1.3em
 }
 
 .sandbox button {
@@ -139,7 +140,6 @@ pre code {
 	width: 100%;
 	min-height: 15em;
 	margin-bottom: 0;
-	font-size: 1.3em;
 	padding: 15px;
 }
 
