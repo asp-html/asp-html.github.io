@@ -14,7 +14,6 @@
             font-family: "Geist Pixel", monospace;
             background: lavenderblush;
             margin: 0;
-            overflow: hidden;
         }
 
         h1 {
@@ -43,11 +42,12 @@
             box-sizing: border-box;
             background: lavenderblush;
             scroll-snap-align: start;
-            overflow-y: auto;
+            overflow-y: scroll;
             flex: 0 0 100%;
             width: 100%;
             scroll-snap-stop: always; 
             scrollbar-width: none;
+            height: 100vh;
         }
 
         .cover h1 {
@@ -70,7 +70,7 @@
         }
 
         iframe {
-            height: 450px;
+            height: 400px;
             width: 85%;
         }
 
