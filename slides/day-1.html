@@ -19,7 +19,9 @@
             font-family: "Redaction 50", serif;
             text-align: center;
             font-size: 2.5rem;
-            margin: 1rem auto;
+            margin: 0 auto 4rem auto;
+            position: relative;
+            top: 30px;
         }
 
         h2 {
@@ -44,15 +46,20 @@
             flex: 0 0 100%;
             width: 100vw;
             scroll-snap-stop: always; 
-            scrollbar-width: none;
             height: 100dvh;
+        }
+
+        div.content {
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
         }
 
         .cover h1 {
             text-align: left;
             margin: 0 auto;
-            text-shadow: 3px 3px yellow;
-            color: saddlebrown;
+            text-shadow: 3px 3px magenta;
+            color: black;
         }
 
         .cover p {
@@ -110,38 +117,58 @@
             <h1>&lt;h1><br>&emsp;Welcome to Handmade Website Building !<br>&lt;/h1></h1>
             <p><i>FSS MS ASP, Fall 2026</i></p>
             <marquee style="width: 200px; margin: 30px auto 0 auto; font-family: 'Redaction 50'; font-size: 2rem;" behavior="alternate">Day 1</marquee>
+            <p style="color: grey; font-size: 1.3em; margin-top: 12%; margin-right: 40px; text-align: right">scroll right --></p>
         </div>
 
         <div class="slide">
             <h1>What is... a website?</h1>
-            <code-sandbox console hidden>
-                <div for="intro"><h2>Some ideas...</h2></div>
-                <textarea for="html"><!-- ... --></textarea>
-                <textarea for="css">body { font-size: 1.5em }</textarea>
-            </code-sandbox>
-            
-        </div>
-
-        <div class="slide">
-            <h1>THE FIRST INTERNET</h1>
-            <div class="img-container">
+            <div class="content">
                 <figure>
-                <img src="arpanet-1969.png">
-                <figcaption>ARPANET 1969</figcaption>
-                </figure>
-                <figure>
-                <img src="arpanet-1970.png">
-                <figcaption>ARPANET 1970</figcaption>
+                    <code-sandbox console hidden>
+                        <div for="intro"></div>
+                        <textarea for="html">&lt;h2>Some ideas:&lt;/h2>
+&lt;ul>
+    &lt;li>a house?&lt;/li>
+    &lt;li>a shelf?&lt;/li>
+    &lt;li>write in more here...&lt;/li>
+&lt;/ul></textarea>
+                        <textarea for="css">body { 
+    font-size: 1.5em; 
+}</textarea>
+                    </code-sandbox>
                 </figure>
             </div>
         </div>
 
         <div class="slide">
+            <h1>THE FIRST INTERNET</h1>
+            <div class="content">
+                <div class="img-container">
+                    <figure>
+                    <img src="arpanet-1969.png">
+                    <figcaption>ARPANET 1969</figcaption>
+                    </figure>
+                    <figure>
+                    <img src="arpanet-1970.png">
+                    <figcaption>ARPANET 1970</figcaption>
+                    </figure>
+                </div>
+            </div>
+        </div>
+
+        <div class="slide">
             <h1>THE FIRST WEBSITE</h1>
-            <figure>
-            <iframe src="https://info.cern.ch/hypertext/WWW/TheProject.html"  id="first-website" title="first-website"></iframe>
-            <figcaption style="text-align: center"><a href="https://info.cern.ch/hypertext/WWW/TheProject.html">https://info.cern.ch/hypertext/WWW/TheProject.html</a></figcaption>
-            </figure>
+            <div class="content">
+                <figure>
+                <iframe src="https://info.cern.ch/hypertext/WWW/TheProject.html"  id="first-website" title="first-website"></iframe>
+                <figcaption style="text-align: center"><a href="https://info.cern.ch/hypertext/WWW/TheProject.html">https://info.cern.ch/hypertext/WWW/TheProject.html</a></figcaption>
+                </figure>
+            </div>
+        </div>
+
+        <div class="slide">
+            <h1>HTML IS A SANDWICH</h1>
+            <p style="font-size: 2rem; text-align: center;">&lt;bun>   ....content....   &lt;/bun></p>
         </div>
 
     </div>
