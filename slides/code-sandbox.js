@@ -175,8 +175,9 @@ customElements.define('code-sandbox', class extends HTMLElement {
 	 */
 	createEditor(type, elem) {
 		if (this[type] === false) return '';
+	
 		return `
-			<details open>
+			<details ${type === 'html' ? 'open' : ''}>
 				<summary>${type.toUpperCase()}</summary>
 				<label for="sandbox-${type}-${this.uuid}" class="screen-reader">${type.toUpperCase()}</label>
 				<div class="sandbox-editor">
