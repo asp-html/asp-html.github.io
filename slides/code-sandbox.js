@@ -167,25 +167,36 @@ customElements.define('code-sandbox', class extends HTMLElement {
 	}
 
 	/**
-	 * Create the editor element HTML
-	 * @todo don't collapse if there's only one content type
-	 * @param  {String}  type The type of code editor
-	 * @param  {Element} elem The template element
-	 * @return {string}       The HTML string
-	 */
-	createEditor(type, elem) {
-		if (this[type] === false) return '';
-	
-		return `
-			<details ${type === 'html' ? 'open' : ''}>
-				<summary>${type.toUpperCase()}</summary>
-				<label for="sandbox-${type}-${this.uuid}" class="screen-reader">${type.toUpperCase()}</label>
-				<div class="sandbox-editor">
-					<pre class="sandbox-mirror"><code id="sandbox-${type}-mirror-${this.uuid}" class="lang-${type}"></code></pre>
-					<textarea spellcheck="false" autocorrect="off" autocapitalize="off" translate="no" class="sandbox-text" id="sandbox-${type}-${this.uuid}"></textarea>
-				</div>
-			</details>`;
-	}
+     * Create the editor element HTML
+     * 
+     * @param  {String}  type The type of code editor
+     * @param  {Element} elem The template element
+     * @return {string}       The HTML string
+     */
+    createEditor(type, elem) {
+        // Return empty if this editor textarea does not exist in the DOM
+        if (!elem) return '';
+
+        // Get all active editor elements present in the component
+        let activeEditors = [
+            this.querySelector('textarea[for="html"]'),
+            this.querySelector('textarea[for="css"]'),
+            this.querySelector('textarea[for="js"]')
+        ].filter(Boolean);
+
+        // Open if it's HTML, or if it is the ONLY editor present
+        let isOpen = type === 'html' || activeEditors.length === 1;
+
+        return `
+            <details ${isOpen ? 'open' : ''}>
+                <summary>${type.toUpperCase()}</summary>
+                <label for="sandbox-${type}-${this.uuid}" class="screen-reader">${type.toUpperCase()}</label>
+                <div class="sandbox-editor">
+                    <pre class="sandbox-mirror"><code id="sandbox-${type}-mirror-${this.uuid}" class="lang-${type}"></code></pre>
+                    <textarea spellcheck="false" autocorrect="off" autocapitalize="off" translate="no" class="sandbox-text" id="sandbox-${type}-${this.uuid}"></textarea>
+                </div>
+            </details>`;
+    }
 
 	/**
 	 * Mirror the content of a text area with syntax highlighting
