@@ -65,7 +65,7 @@ customElements.define('code-sandbox', class extends HTMLElement {
         </div>
 
         <div class="${this.result === 'iframe' ? 'sandbox-result' : 'sandbox-console-result'}">
-            <iframe class="sandbox-iframe" id="sandbox-iframe-${this.uuid}" sandbox="allow-forms allow-modals allow-pointer-lock allow-popups allow-same-origin allow-scripts allow-top-navigation-by-user-activation allow-downloads" frameborder="0" ${this.result === 'console' ? 'hidden' : ''} style="padding: 15px"></iframe>
+            <iframe class="sandbox-iframe" id="sandbox-iframe-${this.uuid}" sandbox="allow-forms allow-modals allow-pointer-lock allow-popups allow-same-origin allow-scripts allow-top-navigation-by-user-activation allow-downloads" frameborder="0" ${this.result === 'console' ? 'hidden' : ''}></iframe>
 
             ${this.result === 'console' ? `<div class="sandbox-label">Console</div>${logger}` : ''}
 
