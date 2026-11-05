@@ -4,29 +4,25 @@
 
 body {
     font-family: "Geist Pixel", monospace;
-    background: snow;
+    background: lavenderblush;
     margin: 0;
+    overflow: hidden;
 }
 
-h1 {
-    font-family: "Geist Pixel", serif;
+h1, h2 {
+    font-family: "Redaction 50", serif;
     text-align: center;
     font-size: 2.5rem;
-    margin: 1rem auto;
+    margin: 50px auto 4rem auto;
 }
 
-h2 {
-    font-family: "Geist Pixel", monospace;
-}
-
-.slideshow {
-    scrollbar-width: none;
+div.slideshow {
     display: flex;
     overflow-x: scroll;
-    scroll-snap-type: x mandatory;   /* Forces horizontal snapping */
+    scrollbar-width: none;
+    scroll-snap-type: x mandatory;
     scroll-behavior: smooth;
     width: 100%;
-    margin: 0 auto;
 }
 
 div.slide {
@@ -34,26 +30,40 @@ div.slide {
     box-sizing: border-box;
     background: lavenderblush;
     scroll-snap-align: start;
-    overflow-y: scroll;
+    overflow-y: auto;
     flex: 0 0 100%;
-    width: 100%;
+    width: 100vw;
     scroll-snap-stop: always; 
-    scrollbar-width: none;
-    height: 100vh;
+    height: 100dvh;
+}
+
+div.content {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    height: 80%;
+}
+
+.cover * {
+    color: sienna
 }
 
 .cover h1 {
     text-align: left;
     margin: 0 auto;
+    color: sienna;
+    text-shadow: 2px 2px yellow;
+    font-family: "Geist Pixel", monospace;
 }
 
 .cover p {
     text-align: center;
     font-size: 2rem;
+    color: sienna;
+    margin-top: 4rem;
 }
 
 div.cover {
-    background: lavenderblush;
     color: black;
     display: flex;
     flex-direction: column;
@@ -61,13 +71,56 @@ div.cover {
     margin-top: 0;
 }
 
+div.cover button {
+    width: fit-content;
+    margin: 8rem auto 0 auto;
+    color: black;
+    font-size: 2rem;
+    font-family: "Geist Pixel", sans-serif;
+    cursor: pointer;
+}
+
 iframe {
     height: 400px;
     width: 85%;
+    max-width: 100%;
+    background-color: white;
+}
+
+figure {
+    max-width: 100vw;
+}
+
+figure.iframe {
+    text-align: center;
+}
+
+figcaption {
+    font-size: 1.3em;
+    text-align: center;
 }
 
 #first-website {
-    background-color: white;
     padding: 30px;
     margin: 0 auto;
+    height: 400px;
+    width: 85%;
+    text-align: center;
+}
+
+.img-container {
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+}
+
+.img-container figcaption {
+    text-align: center;
+    font-size: 1.2em;
+}
+
+.img-container figure img {
+    width: 70%;
 }

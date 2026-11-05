@@ -19,7 +19,15 @@
             font-family: "Redaction 50", serif;
             text-align: center;
             font-size: 2.5rem;
-            margin: 50px auto 4rem auto;
+            margin: 50px auto 2rem auto;
+        }
+
+        p, ol, ul {
+            font-size: 2em;
+        }
+
+        li {
+            margin: 1em 0;
         }
 
         div.slideshow {
@@ -46,7 +54,7 @@
         div.content {
             display: flex;
             flex-direction: column;
-            justify-content: center;
+            justify-content: flex-start;
             height: 80%;
         }
 
@@ -90,6 +98,7 @@
             height: 400px;
             width: 85%;
             max-width: 100%;
+            background-color: white;
         }
 
         figure {
@@ -102,6 +111,7 @@
 
         figcaption {
             font-size: 1.3em;
+            text-align: center;
         }
 
         #first-website {
@@ -112,22 +122,31 @@
             text-align: center;
         }
 
-        .img-container {
+        .row-container {
             display: flex;
             flex-direction: row;
-            justify-content: center;
+            justify-content: flex-end;
             align-items: center;
-            text-align: center;
         }
 
-        .img-container figcaption {
+        .row-container figure {
+            text-align: center;
+            width: 50%;
+        }
+
+        .row-container figcaption {
             text-align: center;
             font-size: 1.2em;
         }
 
-        .img-container figure img {
+        .row-container img {
             width: 70%;
         }
+
+        code-sandbox {
+            margin: 4rem auto;
+        }
+        
 
     </style> 
 </head>
@@ -142,7 +161,7 @@
         </div>
 
         <div class="slide">
-            <h2>WHAT IS... A WEBSITE?</h2>
+            <h2>First, what is a website?</h2>
             <div class="content">
                 <figure>
                     <code-sandbox console hidden>
@@ -156,29 +175,14 @@
                         <textarea for="css">body { 
     font-size: 1.5em; 
 }</textarea>
-                    </code0-sandbox>
+                    </code-sandbox>
+                    <figcaption><cite><a href="https://gist.github.com/cferdinandi/df9c95ae5f5ebcddf2ab85bb2805ff071">code-sandbox source</a></cite></figcaption>
                 </figure>
             </div>
         </div>
 
         <div class="slide">
-            <h2>THE FIRST INTERNET</h2>
-            <div class="content">
-                <div class="img-container">
-                    <figure>
-                    <img src="images/arpanet-1969.png">
-                    <figcaption>ARPANET 1969</figcaption>
-                    </figure>
-                    <figure>
-                    <img src="images/arpanet-1970.png">
-                    <figcaption>ARPANET 1970</figcaption>
-                    </figure>
-                </div>
-            </div>
-        </div>
-
-        <div class="slide">
-            <h2>THE FIRST WEBSITE</h2>
+            <h2>The First Website</h2>
             <div class="content">
                 <figure class="iframe">
                 <iframe src="https://info.cern.ch/hypertext/WWW/TheProject.html"  id="first-website" title="first-website"></iframe>
@@ -188,19 +192,186 @@
         </div>
 
         <div class="slide">
-            <h2>HTML TAGS</h2>
+            <h2>What is a website made of?</h2>
             <div class="content">
+                <div class="row-container" style="justify-content: space-between; align-items: flex-start;">
+                    <p style="font-size: 2em; background-color: rgb(255, 128, 128); padding: 10px"><b>H</b>yper <br><b>T</b>ext <br><b>M</b>arkup <br><b>L</b>anguage <br><br>is the skeleton</p>
+                    <p style="font-size: 2em; background-color: rgb(125, 125, 255); padding: 10px"><b>C</b>ascading <br><b>S</b>tyle <br><b>S</b>heets <br><br>is the clothing</p>
+                    <p style="font-size: 2em; background-color: rgb(255, 255, 159); padding: 10px"><b>J</b>ava <br><b>S</b>cript <br><br>is the muscles</p>
+                </div>
+            </div>
+        </div>
+
+        <div class="slide">
+            <h2>What is Markup Language?</h2>
+            <div class="content">
+                <div class="row-container">
+                    <p style="font-size: 2.8em;"><b>H</b>yper <br><b>T</b>ext <br><span style="text-decoration: underline;"><b>M</b>arkup <br><b>L</b>anguage</span></p>
+                    <figure>
+                    <img src="images/markup-homework.png" alt="Homework marked up with red pen">
+                    <figcaption>"Marked up" homework</figcaption>
+                    </figure>
+                </div>
+                <p>"Markup Language" is a way to tell a computer how to render certain kinds of text. It forms the skeleton of every website.</p>
+                <p>HTML is structured with <i>tags</i>. Here is the first document defining the very first HTML tags:</p>
                 <figure class="iframe">
-                <iframe src="https://info.cern.ch/hypertext/WWW/MarkUp/Tags.html"  id="first-website" title="first-website"></iframe>
-                <figcaption style="text-align: center"><a href="https://info.cern.ch/hypertext/WWW/MarkUp/Tags.html">https://info.cern.ch/hypertext/WWW/MarkUp/Tags.html</a></figcaption>
+                    <iframe src="https://info.cern.ch/hypertext/WWW/MarkUp/Tags.html"  id="first-website" title="first-website"></iframe>
+                    <figcaption style="text-align: center"><a href="https://info.cern.ch/hypertext/WWW/MarkUp/Tags.html">https://info.cern.ch/hypertext/WWW/MarkUp/Tags.html</a></figcaption>
+                </figure>
+                <p>When an opening and a closing tag are combined, they form an <i>element.</i></p>
+                <p>All HTML elements require opening and closing tags, like a sandwich where the bun is the tags and the rendered text is the meat, cheese, and veggies.</p>
+                <p>Opening tags are a letter or word surrounded by < and > characters, like: <b>&lt;bun></b></p>
+                <p>Closing tags are similar to opening tags, but add a backslash before the name, like: <b>&lt;/bun></b></p>
+                <p>The final product should look something like this:</p>
+                <p style="font-size: 2rem; text-align: center; font-weight: bold; margin-bottom: 4rem">&lt;bun>   ....meat, cheese, veggies....   &lt;/bun></p>
+                <code-sandbox console hidden>
+                        <div for="intro"></div>
+                        <textarea for="html">&lt;h3>Experiment:&lt;/h3>
+                            
+&lt;p>Try removing tags in &lt;i>this code&lt;/i>, and see what happens!&lt;/p>
+
+&lt;p>Or, even try adding them, if you feel comfortable&lt;/p>
+
+                        </textarea>
+                    </code-sandbox>
+                <p>The modern web is built with HTML's 5th version, HTML5. Now, there are a <i>lot</i> more tags: </p>
+                <figure>
+                    <h3>All HTML5 Elements:</h3>
+                    <pre style="height: 300px; overflow-y: scroll;">a
+abbr
+address
+area
+article
+aside
+audio
+b
+bdi
+bdo
+blockquote
+body
+br
+button
+canvas
+caption
+cite
+code
+col
+colgroup
+command
+datalist
+dd
+del
+details
+dfn
+div
+dl
+dt
+em
+embed
+fieldset
+figcaption
+figure
+footer
+form
+h1
+h2
+h3
+h4
+h5
+h6
+header
+hr
+html
+i
+iframe
+img
+input
+ins
+kbd
+keygen
+label
+legend
+li
+main
+map
+mark
+menu
+meter
+nav
+object
+ol
+optgroup
+option
+output
+p
+param
+pre
+progress
+q
+rp
+rt
+ruby
+s
+samp
+section
+select
+small
+source
+span
+strong
+sub
+summary
+sup
+table
+tbody
+td
+textarea
+tfoot
+th
+thead
+time
+tr
+track
+u
+ul
+var
+video
+wbr</pre>
                 </figure>
             </div>
         </div>
 
         <div class="slide">
-            <h2>HTML IS A SANDWICH</h2>
+            <h2>Exercise (10 minutes)</h2>
             <div class="content">
-                <p style="font-size: 2rem; text-align: center;">&lt;bun>   ....content....   &lt;/bun></p>
+                <ol style="list-style-type: lower-roman;">
+                    <li>Think about what you might want your website to be about (this is not final).</li>
+                    <li>Take out a sheet of paper, and write down a few things you might want the site to include.</li>
+                    <li>When you're done, take out a different sheet of paper, and rewrite it using header, paragraph, and list tags</li>
+                </ol>
+            </div>
+        </div>
+
+        <div class="slide">
+            <h2>THE FIRST INTERNET</h2>
+            <div class="content">
+                <p>The US military's <a href="https://en.wikipedia.org/wiki/ARPANET"><b>Advanced Research Projects Agency Network</b></a> (ARPANET) was the first wide-area network of computers, and provided the foundation for the modern Internet.</p>
+                <div class="img-container">
+                    <figure>
+                        <img src="images/arpanet-1969.png" alt="Black outline map of the United States, with 4 connected nodes on the west coast labeled with acronyms.">
+                        <figcaption>ARPANET 1969</figcaption>
+                    </figure>
+                    <figure>
+                        <img src="images/arpanet-1970.png" alt="Black outline map of the United States, with many more labelled nodes connecting the west coast to the east coast, with little between.">
+                        <figcaption>ARPANET 1970</figcaption>
+                    </figure>
+                </div>
+                <div class="img-container">
+                    <figure>
+                        <img src="https://upload.wikimedia.org/wikipedia/commons/3/3f/Internet_map_1024_-_transparent%2C_inverted.png?utm_source=en.wikipedia.org&amp;utm_campaign=imageinfo&amp;utm_content=original">
+                        <figcaption>The modern internet</figcaption>
+                    </figure>
+                </div>
             </div>
         </div>
 
