@@ -21,7 +21,7 @@
             font-size: 2.5rem;
             margin: 0 auto 4rem auto;
             position: relative;
-            top: 30px;
+            top: 50px;
         }
 
         h2 {
@@ -72,6 +72,7 @@
             text-align: center;
             font-size: 2rem;
             color: sienna;
+            margin-top: 4rem;
         }
 
         div.cover {
@@ -103,6 +104,10 @@
 
         figure.iframe {
             text-align: center;
+        }
+
+        figcaption {
+            font-size: 1.3em;
         }
 
         #first-website {
@@ -214,13 +219,13 @@
         const container = document.getElementById('slideshowContainer');
 
         window.addEventListener('keydown', (event) => {
-            // Check if the pressed key is the Right Arrow
+
             if (event.key === 'ArrowRight') {
-            container.scrollBy({ left: window.innerWidth, behavior: 'smooth' });
+                container.scrollBy({ left: window.innerWidth, behavior: 'smooth' });
             }
-            // Check if the pressed key is the Left Arrow
+
             if (event.key === 'ArrowLeft') {
-            container.scrollBy({ left: -window.innerWidth, behavior: 'smooth' });
+                container.scrollBy({ left: -window.innerWidth, behavior: 'smooth' });
             }
         });
 
