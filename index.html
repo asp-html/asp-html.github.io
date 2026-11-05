@@ -23,28 +23,37 @@
         }
 
         ul {
-            padding-left: 0;
             list-style-type: none;
             font-weight: bold;
             font-size: 2em
         }
 
-        h1 {
+        li {
+            margin: 2rem 0;
+        }
+
+        h1, summary {
             text-shadow: 3px 3px yellow;
             color: saddlebrown;
-            font-size: 2.5em
+            font-size: 2.5em;
+            font-family: "Redaction 50", monospace;
+            font-weight: bold
         }
 
         a::visited {
-            color: blue;
+            color: blue; 
         }
 
     </style>
 </head>
 <body>
-    <h1>Friends Select ASP HTML Workshop</h1>
-    <ul>
-        <li><a href="slides/day-1.html">Day 1</a>
-    </ul>
+    <details open>
+        <summary>Friends Select ASP HTML Workshop</summary>
+        <ul>
+            <li><a href="slides/day-1.html">Day 1</a>
+            <li><a href="slides/day-2.html">Day 2</a></li>
+        </ul>
+    </details>
+    
 </body>
 </html>
