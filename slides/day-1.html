@@ -44,7 +44,7 @@
         }
 
         section.slide {
-            padding: 1rem 2rem;
+            padding: 1rem 6rem;
             box-sizing: border-box;
             background: lavenderblush;
             scroll-snap-align: start;
@@ -154,6 +154,15 @@
             margin: 4rem auto;
         }
         
+        #fullscreen {
+            position: relative;
+            bottom: 10px; 
+            left: -80px;
+            width: 30px;
+            filter: opacity(0.5);
+            background: none;
+            border: none;
+        }
 
     </style> 
 </head>
@@ -208,6 +217,7 @@
             <div class="content list">
                 <ol style="list-style-type: lower-roman;">
                     <li>Define what "a website" is ✅</li>
+                    <li>Begin exploring some possibilities</li>
                     <li>Discover what a website is made of</li>
                     <li>Sketch out the structure and content of our personal sites</li>
                     <li>Learn some brief history of the internet</li>
@@ -217,7 +227,7 @@
 
         <section class="slide" aria-labelledby="exploration-header">
             <h2 id="exploration-header">Site Exploration</h2>
-            <h3>The First Website:</h3>
+            <h3>The first ever website:</h3>
             <div class="content">
                 <figure class="iframe">
                     <iframe src="https://info.cern.ch/hypertext/WWW/TheProject.html"  class="first-website-iframe" title="first-website"></iframe>
@@ -233,6 +243,8 @@
                     <figcaption style="text-align: center"><a href="https://model-sites.starstar.website/">https://model-sites.starstar.website/</a></figcaption>
                 </figure>
             </div>
+
+            <button onclick="openFullscreen();" id="fullscreen"><img src="images/fullscreen.png" width="30px"></button>
 
             <!--
             <div class="content">
