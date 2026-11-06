@@ -22,7 +22,11 @@
             margin: 50px auto 2rem auto;
         }
 
-        p, ol, ul {
+        h3 {
+            font-size: 2rem;
+        }
+
+        p, ol, ul, summary {
             font-size: 2em;
         }
 
@@ -39,7 +43,7 @@
             width: 100%;
         }
 
-        div.slide {
+        section.slide {
             padding: 1rem 2rem;
             box-sizing: border-box;
             background: lavenderblush;
@@ -55,7 +59,11 @@
             display: flex;
             flex-direction: column;
             justify-content: flex-start;
-            height: 80%;
+        }
+
+        div.list {
+            align-items: center;
+            padding: 0 4rem;
         }
 
         .cover * {
@@ -77,7 +85,7 @@
             margin-top: 4rem;
         }
 
-        div.cover {
+        section.cover {
             color: black;
             display: flex;
             flex-direction: column;
@@ -85,10 +93,12 @@
             margin-top: 0;
         }
 
-        div.cover button {
+        section.cover button {
             width: fit-content;
-            margin: 8rem auto 0 auto;
+            height: fit-content;
+            margin: 0;
             color: black;
+            padding: 5px;
             font-size: 2rem;
             font-family: "Geist Pixel", sans-serif;
             cursor: pointer;
@@ -109,16 +119,13 @@
             text-align: center;
         }
 
-        figcaption {
-            font-size: 1.3em;
-            text-align: center;
+        iframe {
+            width: 100%;
+            height: 450px;
         }
 
-        #first-website {
-            padding: 30px;
-            margin: 0 auto;
-            height: 400px;
-            width: 85%;
+        figcaption {
+            font-size: 1.3em;
             text-align: center;
         }
 
@@ -152,16 +159,31 @@
 </head>
 <body>
     <div class="slideshow" id="slideshow">
-        <div class="slide cover">
-            <h1>&lt;h1>&ensp;Welcome to Handmade Website Building !&ensp;&lt;/h1></h1>
+        <section class="slide cover" aria-labelledby="cover-header">
+            <h1 id="cover-header">&lt;h1>&ensp;Welcome to Handmade Website Building !&ensp;&lt;/h1></h1>
             <p><i>FSS MS ASP, Fall 2026</i></p>
             <marquee style="width: 200px; margin: 30px auto 0 auto; font-family: 'Redaction 50'; font-size: 2rem;" behavior="alternate">Day 1</marquee>
-            <button onclick="openFullscreen();" id="fullBtn">present</button>
-                        <p style="color: grey; font-size: 1.5em; position: relative; bottom: -60px; margin-right: 40px; text-align: right">arrow or scroll ⇢</p>
-        </div>
+            <div style="display: flex; flex-direction: row; justify-content: space-between; align-items: center; margin: 0; position: relative; bottom: -25%;">
+                <button onclick="openFullscreen();" id="fullBtn">presentation mode</button>
+                <p style="color: grey; font-size: 2em; margin: 0">arrow or scroll ⇢</p>
+            </div>
+        </section>
 
-        <div class="slide">
-            <h2>First, what is a website?</h2>
+        <section class="slide" id="workshop-goals" aria-labelledby="workshop-goals-header">
+            <h2 id="workshop-goals-header">Workshop Goals</h2>
+            <div class="content list">
+                <ol style="list-style-type: upper-roman;">
+                    <li>Learn about all the things that make up a website</li>
+                    <li>Build understanding about what the internet really is</li>
+                    <li>Use screens as little as possible</li>
+                    <li style="font-weight: bold;"><span style="background-color: yellow">Design & build our own personal website on any topic!</span></li>
+                    <li><span style="text-decoration: underline">Optional:</span> create a collaborative website about ASP (?)</li>
+                </ol>
+            </div>
+        </section>
+
+        <section class="slide" id="what-is" aria-labelledby="what-is-header">
+            <h2 id="what-is-header">First, what is a website?</h2>
             <div class="content">
                 <figure>
                     <code-sandbox console hidden>
@@ -179,20 +201,32 @@
                     <figcaption><cite><a href="https://gist.github.com/cferdinandi/df9c95ae5f5ebcddf2ab85bb2805ff071">code-sandbox source</a></cite></figcaption>
                 </figure>
             </div>
-        </div>
+        </section>
 
-        <div class="slide">
-            <h2>The First Website</h2>
+        <section class="slide" id="todays-goals" aria-labelledby="todays-goals-header">
+            <h2 id="todays-goals-header">Today's Goals</h2>
+            <div class="content list">
+                <ol style="list-style-type: lower-roman;">
+                    <li>Define what "a website" is ✅</li>
+                    <li>Discover what a website is made of</li>
+                    <li>Sketch out the structure and content of our personal sites</li>
+                    <li>Learn some brief history of the internet</li>
+                </ol>
+            </div>
+        </section>
+
+        <section class="slide" id="first-website" aria-labelledby="first-website-header">
+            <h2 id="first-website-header">The First Website</h2>
             <div class="content">
                 <figure class="iframe">
-                <iframe src="https://info.cern.ch/hypertext/WWW/TheProject.html"  id="first-website" title="first-website"></iframe>
+                <iframe src="https://info.cern.ch/hypertext/WWW/TheProject.html"  class="first-website-iframe" title="first-website"></iframe>
                 <figcaption style="text-align: center"><a href="https://info.cern.ch/hypertext/WWW/TheProject.html">https://info.cern.ch/hypertext/WWW/TheProject.html</a></figcaption>
                 </figure>
             </div>
-        </div>
+        </section>
 
-        <div class="slide">
-            <h2>What is a website made of?</h2>
+        <section class="slide" id="made-of" aria-labelledby="made-of-header">
+            <h2 id="made-of-header">What is a website made of?</h2>
             <div class="content" style="justify-content: center;">
                 <div class="row-container" style="justify-content: space-around; align-items: flex-start;">
                     <p style="font-size: 2em; background-color: rgb(255, 128, 128); padding: 10px"><b>H</b>yper <br><b>T</b>ext <br><b>M</b>arkup <br><b>L</b>anguage <br><br>is the skeleton</p>
@@ -200,10 +234,11 @@
                     <p style="font-size: 2em; background-color: rgb(255, 255, 159); padding: 10px"><b>J</b>ava <br><b>S</b>cript <br><br>is the muscles</p>
                 </div>
             </div>
-        </div>
+        </section>
 
-        <div class="slide">
-            <h2>What is Markup Language?</h2>
+        <section class="slide" id="markup" aria-labelledby="markup-header">
+            <h2 id="markup-header">What is Markup Language?</h2>
+            <p style="text-align: center; margin: 1rem; font-weight:bold">↓&emsp;↓&emsp;↓</p>
             <div class="content">
                 <div class="row-container">
                     <p style="font-size: 2.8em;"><b>H</b>yper <br><b>T</b>ext <br><span style="text-decoration: underline;"><b>M</b>arkup <br><b>L</b>anguage</span></p>
@@ -215,25 +250,34 @@
                 <p>"Markup Language" is a way to tell a computer how to render certain kinds of text. It forms the skeleton of every website.</p>
                 <p>HTML is structured with <i>tags</i>. Here is the first document defining the very first HTML tags:</p>
                 <figure class="iframe">
-                    <iframe src="https://info.cern.ch/hypertext/WWW/MarkUp/Tags.html"  id="first-website" title="first-website"></iframe>
+                    <iframe src="https://info.cern.ch/hypertext/WWW/MarkUp/Tags.html"  class="first-website-iframe" title="first-website"></iframe>
                     <figcaption style="text-align: center"><a href="https://info.cern.ch/hypertext/WWW/MarkUp/Tags.html">https://info.cern.ch/hypertext/WWW/MarkUp/Tags.html</a></figcaption>
                 </figure>
                 <p>When an opening and a closing tag are combined, they form an <i>element.</i></p>
+                <p style="text-align: center; margin: 0; font-weight:bold; margin: 1rem">↓</p>
                 <p>All HTML elements require opening and closing tags, like a sandwich where the bun is the tags and the rendered text is the meat, cheese, and veggies.</p>
+                <p style="text-align: center; margin: 0; font-weight:bold; margin: 1rem">↓</p>
                 <p>Opening tags are a letter or word surrounded by < and > characters, like: <b>&lt;bun></b></p>
+                <p style="text-align: center; margin: 0; font-weight:bold; margin: 1rem">↓</p>
                 <p>Closing tags are similar to opening tags, but add a backslash before the name, like: <b>&lt;/bun></b></p>
+                <p style="text-align: center; margin: 0; font-weight:bold; margin: 1rem">↓</p>
                 <p>The final product should look something like this:</p>
-                <p style="font-size: 2rem; text-align: center; font-weight: bold; margin-bottom: 4rem">&lt;bun>   ....meat, cheese, veggies....   &lt;/bun></p>
+                <p style="text-align: center; margin: 0; font-weight:bold; margin: 1rem">↓</p>
+                <p style="font-size: 2rem; text-align: center; font-weight: bold; margin-bottom: 4rem">&lt;bun>   ....meat, cheese, veggies....   &lt;/bun></p></details>
                 <code-sandbox console hidden>
-                        <div for="intro"></div>
-                        <textarea for="html">&lt;h3>Experiment:&lt;/h3>
+                    <div for="intro"></div>
+                    <textarea for="html">&lt;h3>Experiment:&lt;/h3>
                             
 &lt;p>Try removing tags in &lt;i>this code&lt;/i>, and see what happens!&lt;/p>
 
 &lt;p>Or, even try adding them, if you feel comfortable&lt;/p>
 
-                        </textarea>
-                    </code-sandbox>
+                    </textarea>
+                    <textarea for="css">* {
+    font-size: 1.2rem
+}
+                    </textarea>
+                </code-sandbox>
                 <p>The modern web is built with HTML's 5th version, HTML5. Now, there are a <i>lot</i> more tags: </p>
                 <figure>
                     <h3>All HTML5 Elements:</h3>
@@ -295,6 +339,7 @@ li
 main
 map
 mark
+marquee
 menu
 meter
 nav
@@ -338,22 +383,111 @@ var
 video
 wbr</pre>
                 </figure>
-            </div>
-        </div>
 
-        <div class="slide">
-            <h2>Exercise (10 minutes)</h2>
+            <code-sandbox console hidden>
+                <textarea for="html">&lt;h3>try some intriguing elements here&lt;/h3>
+
+&lt;aside>hint: marquee is really fun&lt;/aside>
+                </textarea>
+                <textarea for="css">* {
+    font-size: 1.2rem;
+}
+
+aside {
+    font-style: italic;
+}
+                </textarea>
+            </code-sandbox>
+            </div>
+        </section>
+
+        <section class="slide" id="basic-html" aria-labelledby="basic-html-header">
+            <h2 id="basic-html-header">&lt;h2> Fundamental HTML Elements &lt;/h2></h2>
             <div class="content">
+                <h3 style="background-color: yellow;">&lt;h3> Headers &lt;/h3></h3>
+                <p><i>Header elements</i> are: <b>&lt;h1>, &lt;h2>, &lt;h3>, &lt;h4>, &lt;h5></b></p>
+
+                <code-sandbox console hidden>
+                    <textarea for="html">&lt;h1>Heading Level 1&lt;/h1>
+&lt;h2>Heading Level 2&lt;/h2>
+&lt;h3>Heading Level 3&lt;/h3>
+&lt;h4>Heading Level 4&lt;/h4>
+&lt;h5>Heading Level 5&lt;/h5>
+                    </textarea>
+                </code-sandbox>
+
+                <p>Headings are meant to be nested sequentially: there should only be one &lt;h1> element on a webpage, main subsections of a site should have &lt;h2> elements, and any subsections of those subsections have &lt;h3>, and rarely, &lt;h4>, and &lt;h5></p>
+
+                <p>The headings on this page have been written in to show structure</p>
+
+                <h3 style="background-color: yellow;">&lt;h3> Paragraphs &lt;/h3></h3>
+
+                <p>Paragraphs elements, &lt;p>, contain the body text of a website, like these sentences. Most of the text on a site should be structured with these, in the same way you structure any other piece of writing.</p>
+
+                <p>They will separate themselves a bit with default styling, but we'll learn how to change that later.</p>
+
+                <code-sandbox console hidden>
+                    <textarea for="html">&lt;h3>Paragraphs&lt;/h3>
+&lt;p>Paragraphs elements contain the body text of a website, like these sentences. Most of the text on a site should be structured with these, in the same way you structure any other piece of writing.&lt;/p>
+
+&lt;p>They will separate themselves a bit with default styling, but we'll learn how to change that later.&lt;/p>
+                    </textarea>
+                    <textarea for="css">* {
+    font-size: 1.2rem;
+}
+                    </textarea>
+                </code-sandbox>
+
+                <h3 style="background-color: yellow;">&lt;h3> Lists &lt;/h3></h3>
+
+                <p>There are two kinds of list elements:</p>
+                <ul style="margin: 0;">
+                    <li>Ordered lists, &lt;ol></li>
+                    <li>Unordered lists, &lt;ul></li>
+                </ul>
+
+                <p>That was a &lt;ul> element.</p>
+
+                <p>Each separate item in a list is denoted with a &lt;li> element</p>
+
+                <p>This is how they're structured:</p>
+
+                <code-sandbox console hidden>
+                    <textarea for="html">&lt;h4>Unordered list:&lt;/h4>
+&lt;ul>
+    &lt;li>Unordered lists&lt;/li>
+    &lt;li>have bullet points&lt;/li>
+&lt;/ul>
+
+&lt;h4>Ordered list:&lt;/h4>
+
+&lt;ol>
+    &lt;li>Ordered lists&lt;/li>
+    &lt;li>are numbered&lt;/li>
+&lt;/ol>
+                    </textarea>
+                    <textarea for="css">* {
+    font-size: 1.2rem;
+}
+                    </textarea>
+                </code-sandbox>
+
+            </div>
+        </section>
+
+        <section class="slide" id="exercise-1" aria-labelledby="exercise-1-header">
+            <h2 id="exercise-1-header">Exercise (10 minutes)</h2>
+            <div class="content list">
                 <ol style="list-style-type: lower-roman;">
                     <li>Think about what you might want your website to be about (this is not final).</li>
-                    <li>Take out a sheet of paper, and write down a few things you might want the site to include.</li>
-                    <li>When you're done, take out a different sheet of paper, and rewrite it using header, paragraph, and list tags.</li>
+                    <li>Take out a sheet of paper, and write down a few things you want the site to include.</li>
+                    <li>When you're done, take out a different sheet of paper, and format it using header, paragraph, and list tags.</li>
                 </ol>
             </div>
-        </div>
+        </section>
         
-        <div class="slide">
-            <h2>What is Hypertext?</h2>
+        <section class="slide" id="hypertext" aria-labelledby="hypertext-header">
+            <h2 id="hypertext-header">What is Hypertext?</h2>
             <div class="content">
                 <div class="row-container">
                     <p style="font-size: 2.8em;"><span style="text-decoration: underline;"><a href="https://en.wikipedia.org/wiki/Hypertext"><b>H</b>yper <br><b>T</b>ext</a></span> <br><b>M</b>arkup <br><b>L</b>anguage</p>
@@ -363,17 +497,17 @@ wbr</pre>
                     </figure>
                 </div>
                 <p>Hypertext is what makes the web... a web.</p>
-                <p>It is structured with <i>anchor tags</i>, &lt;a> and &lt;/a>.</p>
+                <p>It is structured with <i>anchor tags</i>, <b>&lt;a></b> and <b>&lt;/a></b>.</p>
 
-                
+
             </div>
-        </div>
+        </section>
 
-        <div class="slide">
-            <h2>THE FIRST INTERNET</h2>
+        <section class="slide" id="internet-history" aria-labelledby="internet-history-header">
+            <h2 id="internet-history-header">THE FIRST INTERNET</h2>
             <div class="content">
                 <p>The US military's <a href="https://en.wikipedia.org/wiki/ARPANET"><b>Advanced Research Projects Agency Network</b></a> (ARPANET) was the first wide-area network of computers, and provided the foundation for the modern Internet.</p>
-                <div class="img-container">
+                <div class="row-container">
                     <figure>
                         <img src="images/arpanet-1969.png" alt="Black outline map of the United States, with 4 connected nodes on the west coast labeled with acronyms.">
                         <figcaption>ARPANET 1969</figcaption>
@@ -383,47 +517,46 @@ wbr</pre>
                         <figcaption>ARPANET 1970</figcaption>
                     </figure>
                 </div>
-                <div class="img-container">
-                    <figure>
-                        <img src="https://upload.wikimedia.org/wikipedia/commons/3/3f/Internet_map_1024_-_transparent%2C_inverted.png?utm_source=en.wikipedia.org&amp;utm_campaign=imageinfo&amp;utm_content=original">
-                        <figcaption>The modern internet</figcaption>
-                    </figure>
-                </div>
             </div>
-        </div>
+        </section>
     </div>
     <script type="module" src="code-sandbox.js"></script>
     <script>
-        document.getElementById('first-website').contentWindow.document.body.innerHTML
-
-        const btn = document.getElementById("fullBtn");
-        const container = document.getElementById('slideshowContainer');
+        const slideshow = document.getElementById('slideshow');
 
         window.addEventListener('keydown', (event) => {
-
             if (event.key === 'ArrowRight') {
-                container.scrollBy({ left: window.innerWidth, behavior: 'smooth' });
+                slideshow.scrollBy({ left: slideshow.clientWidth, behavior: 'smooth' });
             }
-
             if (event.key === 'ArrowLeft') {
-                container.scrollBy({ left: -window.innerWidth, behavior: 'smooth' });
+                slideshow.scrollBy({ left: -slideshow.clientWidth, behavior: 'smooth' });
             }
         });
 
-        var elem = document.getElementById("slideshow");
+        const fullBtn = document.getElementById('fullBtn');
 
-        /* Function to open fullscreen mode */
+        const isFullscreen = () =>
+            !!(document.fullscreenElement || document.webkitFullscreenElement);
+
         function openFullscreen() {
-            if (elem.requestFullscreen) {
-                elem.requestFullscreen();
-            } else if (elem.webkitRequestFullscreen) { /* Safari */
-                elem.webkitRequestFullscreen();
-            } else if (elem.msRequestFullscreen) { /* IE11 */
-                elem.msRequestFullscreen();
+            if (isFullscreen()) {
+                if (document.exitFullscreen) {
+                    document.exitFullscreen();
+                } else if (document.webkitExitFullscreen) { /* Safari */
+                    document.webkitExitFullscreen();
+                }
+            } else if (slideshow.requestFullscreen) {
+                slideshow.requestFullscreen();
+            } else if (slideshow.webkitRequestFullscreen) { /* Safari */
+                slideshow.webkitRequestFullscreen();
             }
-
-            btn.style.display = "none";
         }
+
+        function syncFullBtn() {
+            fullBtn.textContent = isFullscreen() ? 'exit presentation mode' : 'presentation mode';
+        }
+        document.addEventListener('fullscreenchange', syncFullBtn);
+        document.addEventListener('webkitfullscreenchange', syncFullBtn);
     </script>
 </body>
 </html>
