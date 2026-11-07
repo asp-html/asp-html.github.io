@@ -29,11 +29,15 @@
         }
 
         p, ol, ul, summary {
-            font-size: 2em;
+            font-size: 2rem;
         }
 
         li {
             margin: 1em 0;
+        }
+
+        li ul li {
+            margin: 0.5rem;
         }
 
         div.slideshow {
@@ -191,6 +195,10 @@
             width: 0;
         }
 
+        .setup h3, .setup ul{
+            margin: 0;
+        }
+
     </style> 
 </head>
 <body>
@@ -226,11 +234,69 @@
             <div class="content list">
                 <ol style="list-style-type: lower-roman;">
                     <li>Learn about Cascading Stylesheets</li>
-                    
+
                 </ol>
             </div>
         </section>
 
+        <section class="slide" id="tools" aria-labelledby="tools-header">
+            <h2 id="tools-header">Tools we will be using:</h2>
+            <div class="content">
+                <div class="row-container" style="justify-content: center; align-items: flex-start;">
+                    <div style="margin: 0 4rem">
+                        <h3>Physical artmaking tools</h3>
+                        <ul>
+                            <li>construction paper</li>
+                            <li>scissors</li>
+                            <li>markers</li>
+                            <li>masking tape</li>
+                        </ul>
+                    </div>
+
+                    <div style="margin: 0 4rem">
+                        <h3>Digital tools</h3>
+                        <ul>
+                            <li>Google Drive</li>
+                            <li><a href="https://vscode.dev">vscode.dev</a></li>
+                            <li><a href="https://write.html.energy">write.html.energy</a></li>
+                            <li><strong><em>Not AI</em></strong></li>
+                        </ul>
+                    </div>
+                <div>
+            </div>
+        </section>
+
+        <section class="slide" id="vscode" aria-labelledby="vscode-header">
+            <h2 id="vscode-header">Setup</h2>
+            <div class="content list setup" style="align-items: flex-start;">
+                <h3>Setting up files:</h3>
+                <ul>
+                    <li>
+                        Make a folder in Google Drive titled "website", or something else memorable
+                    </li>
+                    <li>
+                        Create a new file inside that folder, title it "index.html"
+                    </li>
+                </ul>
+                <h3 style="margin-top: 3rem">Setting up Visual Studio Code</h3>
+                <ul>
+                    <li>
+                        Visit <a href="https://vscode.dev">vscode.dev</a>
+                    </li>
+                    <li>
+                        Select "open a folder"
+                    </li>
+                    <li>
+                        Open your index.html file
+                    </li>
+                    <li>
+                        Write: !, and hit enter
+                    </li>
+                    <li>
+                        Our file is set up! You can save the file from the VSCode window with Cmd + S.
+                    </li>
+                </ul>
+            </div>
     </div>
     
     <script type="module" src="code-sandbox.js"></script>
