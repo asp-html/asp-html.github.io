@@ -205,5 +205,44 @@
             </div>
         </section>
     </div>
+    
+    <script type="module" src="code-sandbox.js"></script>
+    <script>
+        const slideshow = document.getElementById('slideshow');
+
+        window.addEventListener('keydown', (event) => {
+            if (event.key === 'ArrowRight') {
+                slideshow.scrollBy({ left: slideshow.clientWidth, behavior: 'smooth' });
+            }
+            if (event.key === 'ArrowLeft') {
+                slideshow.scrollBy({ left: -slideshow.clientWidth, behavior: 'smooth' });
+            }
+        });
+
+        const fullBtn = document.getElementById('fullBtn');
+
+        const isFullscreen = () =>
+            !!(document.fullscreenElement || document.webkitFullscreenElement);
+
+        function openFullscreen() {
+            if (isFullscreen()) {
+                if (document.exitFullscreen) {
+                    document.exitFullscreen();
+                } else if (document.webkitExitFullscreen) { /* Safari */
+                    document.webkitExitFullscreen();
+                }
+            } else if (slideshow.requestFullscreen) {
+                slideshow.requestFullscreen();
+            } else if (slideshow.webkitRequestFullscreen) { /* Safari */
+                slideshow.webkitRequestFullscreen();
+            }
+        }
+
+        function syncFullBtn() {
+            fullBtn.textContent = isFullscreen() ? 'exit presentation mode' : 'presentation mode';
+        }
+        document.addEventListener('fullscreenchange', syncFullBtn);
+        document.addEventListener('webkitfullscreenchange', syncFullBtn);
+    </script>
 </body>
 </html>
