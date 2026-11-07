@@ -164,6 +164,31 @@
             border: none;
         }
 
+        .house { 
+            background: aliceblue; 
+            display: inline-block;
+            height: fit-content;
+            margin-left: 20px;
+            margin-top: 55px; 
+            position: relative; 
+            width: 300px;
+            min-width: 300px;
+            max-width: 300px; 
+            padding: 15px;
+        } 
+
+        .house:before {
+            border-bottom: 50px solid aliceblue;
+            border-left: 165px solid transparent;
+            border-right: 165px solid transparent;
+            content: "";
+            height: 0;
+            left: 0;
+            position: absolute;
+            top: -50px;
+            width: 0;
+        }
+
     </style> 
 </head>
 <body>
@@ -227,15 +252,17 @@
 
         <section class="slide" aria-labelledby="exploration-header">
             <h2 id="exploration-header">Site Exploration</h2>
+            <p style="text-align: center; margin: 1rem; font-weight:bold">↓&emsp;↓&emsp;↓</p>
             <h3>The first ever website:</h3>
             <div class="content">
                 <figure class="iframe">
                     <iframe src="https://info.cern.ch/hypertext/WWW/TheProject.html"  class="first-website-iframe" title="first-website"></iframe>
                     <figcaption style="text-align: center"><a href="https://info.cern.ch/hypertext/WWW/TheProject.html">https://info.cern.ch/hypertext/WWW/TheProject.html</a></figcaption>
                 </figure>
+                <p>Do you notice anything about it? Do you wonder anything about it?</p>
             </div>
 
-            <h3>Some sample sites:</h3>
+            <h3>Some more sample sites:</h3>
 
             <div class="content">
                 <figure class="iframe">
@@ -257,12 +284,16 @@
         </section>
 
         <section class="slide" id="made-of" aria-labelledby="made-of-header">
-            <h2 id="made-of-header">What is a website made of?</h2>
+            <h2 id="made-of-header">If a website is a house...</h2>
             <div class="content" style="justify-content: center;">
                 <div class="row-container" style="justify-content: space-around; align-items: flex-start;">
-                    <p style="font-size: 2em; background-color: rgb(255, 128, 128); padding: 10px"><b>H</b>yper <br><b>T</b>ext <br><b>M</b>arkup <br><b>L</b>anguage <br><br>is the skeleton</p>
-                    <p style="font-size: 2em; background-color: rgb(125, 125, 255); padding: 10px"><b>C</b>ascading <br><b>S</b>tyle <br><b>S</b>heets <br><br>is the clothing</p>
-                    <p style="font-size: 2em; background-color: rgb(255, 255, 159); padding: 10px"><b>J</b>ava <br><b>S</b>cript <br><br>is the muscles</p>
+                    <!--<p> style="font-size: 2em; background-color: rgb(255, 128, 128); padding: 10px; margin: 0 3rem;"</p>-->
+                    
+                    <p class="house"><b>H</b>yper <br><b>T</b>ext <br><b>M</b>arkup <br><b>L</b>anguage <br><br>is the structure that holds it up.</p>
+                    
+                    <!-- <p style="font-size: 2em; background-color: rgb(125, 125, 255); padding: 10px; margin: 0 3rem"> --> 
+                    <p class="house"><b>C</b>ascading <br><b>S</b>tyle <br><b>S</b>heets <br><br>is the decoration, changing the colors, shapes, and textures.</p>
+                    <!--<p style="font-size: 2em; background-color: rgb(255, 255, 159); padding: 10px"><b>J</b>ava <br><b>S</b>cript <br><br>is the muscles, making the site move</p>-->
                 </div>
             </div>
         </section>
@@ -278,7 +309,7 @@
                     <figcaption>"Marked up" homework</figcaption>
                     </figure>
                 </div>
-                <p>"Markup Language" is a way to tell a computer how to render certain kinds of text. It forms the skeleton of every website.</p>
+                <p>"Markup Language" is a way to tell a computer how to understand and display different kinds of text. It forms the skeleton of every website.</p>
                 <p>HTML is structured with <i>tags</i>. Here is the first document defining the very first HTML tags:</p>
                 <figure class="iframe">
                     <iframe src="https://info.cern.ch/hypertext/WWW/MarkUp/Tags.html"  class="first-website-iframe" title="first-website"></iframe>
@@ -436,8 +467,29 @@ aside {
             <h2 id="basic-html-header">&lt;h2> Fundamental HTML Elements &lt;/h2></h2>
             <p style="text-align: center; margin: 1rem; font-weight:bold">↓&emsp;↓&emsp;↓</p>
             <div class="content">
-                <h3 style="background-color: yellow;">&lt;h3> Headers &lt;/h3></h3>
-                <p><i>Header elements</i> are: <b>&lt;h1>, &lt;h2>, &lt;h3>, &lt;h4>, &lt;h5></b></p>
+                <h3 style="background-color: yellow;">&lt;h3> Body &lt;/h3></h3>
+
+                <p>The &lt;body> element is the container that all content of a website lives in. Everything you want to be displayed must be wrapped in one &lt;body> element.</p>
+
+                <code-sandbox console hidden>
+                    <textarea for="html">&lt;body>
+    Like this!
+&lt;/body>
+                    </textarea>
+                    <textarea for="css">body {
+    font-size: 1.2em;
+    background-color: blue;
+    color: white;
+}
+
+                    </textarea>
+                </code-sandbox>
+
+
+
+
+                <h3 style="background-color: yellow;">&lt;h3> Headings &lt;/h3></h3>
+                <p><i>Heading elements</i> are: <b>&lt;h1>, &lt;h2>, &lt;h3>, &lt;h4>, &lt;h5></b></p>
 
                 <code-sandbox console hidden>
                     <textarea for="html">&lt;h1>Heading Level 1&lt;/h1>
@@ -456,13 +508,13 @@ aside {
 
                 <p>Paragraphs elements, &lt;p>, contain the body text of a website, like these sentences. Most of the text on a site should be structured with these, in the same way you structure any other piece of writing.</p>
 
-                <p>They will separate themselves a bit with default styling, but we'll learn how to change that later.</p>
+                <p>They will separate themselves a bit with default styling.</p>
 
                 <code-sandbox console hidden>
                     <textarea for="html">&lt;h3>Paragraphs&lt;/h3>
 &lt;p>Paragraphs elements contain the body text of a website, like these sentences. Most of the text on a site should be structured with these, in the same way you structure any other piece of writing.&lt;/p>
 
-&lt;p>They will separate themselves a bit with default styling, but we'll learn how to change that later.&lt;/p>
+&lt;p>They will separate themselves a bit with default styling.&lt;/p>
                     </textarea>
                     <textarea for="css">* {
     font-size: 1.2rem;
@@ -472,7 +524,7 @@ aside {
 
                 <h3 style="background-color: yellow;">&lt;h3> Lists &lt;/h3></h3>
 
-                <p>There are two kinds of list elements:</p>
+                <p>There are two basic kinds of list elements:</p>
                 <ul style="margin: 0;">
                     <li>Ordered lists, &lt;ol></li>
                     <li>Unordered lists, &lt;ul></li>
@@ -480,7 +532,7 @@ aside {
 
                 <p>That was a &lt;ul> element.</p>
 
-                <p>Each separate item in a list is denoted with a &lt;li> element.</p>
+                <p>Each separate item in a list is denoted with a &lt;li> (list item) element.</p>
 
                 <p>This is how they're structured:</p>
 
@@ -492,11 +544,15 @@ aside {
 &lt;/ul>
 
 &lt;h4>Ordered list:&lt;/h4>
-
 &lt;ol>
     &lt;li>Ordered lists&lt;/li>
     &lt;li>are numbered&lt;/li>
 &lt;/ol>
+
+&lt;h4>Some things I want to put in a list are:&lt;/h4>
+&lt;ul>
+    &lt;li>&lt;i>list something!&lt;/i>&lt;/li>
+&lt;/ul>
                     </textarea>
                     <textarea for="css">* {
     font-size: 1.2rem;
@@ -525,13 +581,26 @@ aside {
                     <p style="font-size: 2.8em;"><span style="text-decoration: underline;"><a href="https://en.wikipedia.org/wiki/Hypertext"><b>H</b>yper <br><b>T</b>ext</a></span> <br><b>M</b>arkup <br><b>L</b>anguage</p>
                     <figure>
                     <img src="https://upload.wikimedia.org/wikipedia/commons/3/3f/Internet_map_1024_-_transparent%2C_inverted.png?utm_source=en.wikipedia.org&amp;utm_campaign=imageinfo&amp;utm_content=original" alt="Homework marked up with red pen">
-                    <figcaption>The structure of the modern internet.</figcaption>
+                    <figcaption>The web structure of the modern internet.</figcaption>
                     </figure>
                 </div>
-                <p>Hypertext is what makes the web... a web.</p>
-                <p>It is structured with <i>anchor tags</i>, <b>&lt;a></b> and <b>&lt;/a></b>.</p>
+                
+                <p>Hypertext is what makes the web... a web. Links connect pages together.</p>
+                
+                <p>Links are structured with <i>anchor tags</i>, <b>&lt;a></b> and <b>&lt;/a></b>.</p>
+                
+                <p>It is always important to make sure your links contain descriptive text, not like:
+                <br>
+                <br>    
+                "<a href="https://en.wikipedia.org/wiki/Anchor">Here</a> is a link to the Wikipedia page about anchors," 
+                <br>
+                <br>
+                but like: 
+                <br>
+                <br>
+                "<a href="https://en.wikipedia.org/wiki/Anchor">Here is a link to the Wikipedia page on anchors</a>.</p>
 
-
+                <p>Why is that important?</p>
             </div>
         </section>
 
@@ -550,7 +619,11 @@ aside {
                     </figure>
                 </div>
 
-                <p>Now, the world's internet is primarily connected via glass fiber optic cables that run under the oceans and across land</p>
+                <p>The internet began as a military tool. Then, <a href="https://en.wikipedia.org/wiki/Tim_Berners-Lee">Tim Berners-Lee</a> adapted those technologies into a new  open invention called the World Wide Web, and spread the technology without restrictions.</p>
+
+                <p>Tim was also was the primary creator of HTML, adapting it from earlier markup languages.</p>
+
+                <p>Now, the internet is international, primarily connected via glass fiber optic cables that run under the oceans and across land</p>
 
                 <div class="row-container" style="justify-content: center;">
                     <figure>
