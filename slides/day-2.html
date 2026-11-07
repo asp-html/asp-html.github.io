@@ -195,7 +195,7 @@
 </head>
 <body>
     <div class="slideshow" id="slideshow">
-        <section class="slide cover" aria-labelledby="cover-header">
+        <section class="slide cover" id="cover" aria-labelledby="cover-header">
             <h1 id="cover-header">&lt;h1>&ensp;Handmade Website Building: Day 2!&ensp;&lt;/h1></h1>
             <p><i>FSS MS ASP, Fall 2026</i></p>
             <marquee style="width: 400px; margin: 30px auto 0 auto; font-family: 'Redaction 50'; font-size: 2rem;" direction="right" behavior="alternate"><i>Coming soon...</i></marquee>
@@ -204,6 +204,33 @@
                 <p style="color: grey; font-size: 2em; margin: 0">arrow or scroll ⇢</p>
             </div>
         </section>
+
+        <section class="slide" aria-labelledby="yesterday-header" id="yesterday">
+            <h2 id="yesterday-header">Yesterday we:</h2>
+            <code-sandbox console hidden>
+                <textarea for="html">&lt;ul>
+    &lt;li>thought about what our websites might be&lt;/li>
+    &lt;li>learned basic HTML: body, headings, paragraphs, lists&lt;/li>
+    &lt;li>wrote down some ideas & formatted them&lt;/li>
+&lt;/ul>
+                </textarea>
+                <textarea for="css">* {
+    font-size: 1.2rem
+}
+                </textarea>
+            </code-sandbox>
+        </section>
+
+        <section class="slide" id="todays-goals" aria-labelledby="todays-goals-header">
+            <h2 id="todays-goals-header">Today's Goals</h2>
+            <div class="content list">
+                <ol style="list-style-type: lower-roman;">
+                    <li>Learn about Cascading Stylesheets</li>
+                    
+                </ol>
+            </div>
+        </section>
+
     </div>
     
     <script type="module" src="code-sandbox.js"></script>
