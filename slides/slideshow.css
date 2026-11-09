@@ -7,11 +7,23 @@
         margin: 0;
     }
 
-    p {
-        font-size: 1.5rem;
+    p, li, ol, ul, summary {
+        font-size: 1.3em !important;
     }
 
     section.slide {
-        padding: 1rem;
+        padding: 1rem !important;
+    }
+
+    figure, ul, li {
+        margin: 0 !important;
+    }
+
+    li {
+        margin: 1rem 0 !important;
+    }
+
+    div.list {
+        padding: 0 !important;
     }
 }
