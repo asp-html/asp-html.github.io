@@ -28,6 +28,8 @@
     }
 }
 
-body {
-    font-size: 120%;
+@media screen and (min-width: 2000px) {
+    body {
+        font-size: 130%;
+    }
 }
