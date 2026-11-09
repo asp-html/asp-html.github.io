@@ -89,7 +89,7 @@
             color: black;
             display: flex;
             flex-direction: column;
-            justify-content: center;
+            justify-content: flex-start;
             margin-top: 0;
         }
 
@@ -115,6 +115,7 @@
 
         figure.iframe {
             text-align: center;
+            margin-bottom: 5rem;
         }
 
         iframe {
@@ -192,13 +193,35 @@
 </head>
 <body>
     <div class="slideshow" id="slideshow">
-        <section class="slide cover" aria-labelledby="cover-header">
-            <h1 id="cover-header">&lt;h1>&ensp;Welcome to Handmade Website Building !&ensp;&lt;/h1></h1>
+        <section id="cover" class="slide cover" aria-labelledby="cover-header">
+            <h1 style="margin-top: 15%" id="cover-header">&lt;h1>&ensp;Welcome to Handmade Website Building !&ensp;&lt;/h1></h1>
             <p><i>FSS MS ASP, Fall 2026</i></p>
             <marquee style="width: 200px; margin: 30px auto 0 auto; font-family: 'Redaction 50'; font-size: 2rem;" behavior="alternate">Day 1</marquee>
             <div style="display: flex; flex-direction: row; justify-content: space-between; align-items: center; margin: 0; position: relative; bottom: -25%;">
-                <button onclick="openFullscreen();" id="fullBtn">presentation mode</button>
+                <button onclick="openFullscreen();" id="fullBtn" style="font-size: 120%">presentation mode</button>
+                <h2 style="font-size: 150%">Table of Contents &darr;</h2>
                 <p style="color: grey; font-size: 2em; margin: 0">arrow or scroll ⇢</p>
+            </div>
+            
+            <div style="top: 23vh; position: relative">
+
+                <div class="content">
+                    <ul>
+                        <li><a href="#cover">Title</a></li>
+                        <li><a href="#workshop-goals">Workshop goals</a></li>
+                        <li><a href="#exploration">Site exploration</a></li>
+                        <li><a href="#what-is">What is a website?</a></li>
+                        <li><a href="#todays-goals">Today's goals</a></li>
+                        <li><a href="#collaborative">Collaborative website</a></li>
+                        <li><a href="#made-of">What is a website made of?</a></li>
+                        <li><a href="#markup">What is Markup Language?</a></li>
+                        <li><a href="#basic-html">Basic HTML Elements</a></li>
+                        <li><a href="#exercise-1">Individual exercise</a></li>
+                        <li><a href="#hypertext">What is Hypertext?</a></li>
+                        <li><a href="#internet-history">Note on internet infrastructure</a></li>
+                        <li><a href="#tomorrow">Tomorrow</a></li>
+                    </ul>
+                </div>
             </div>
         </section>
 
@@ -215,24 +238,53 @@
             </div>
         </section>
 
-        <section class="slide" aria-labelledby="exploration-header">
+        <section class="slide" id="exploration" aria-labelledby="exploration-header">
             <h2 id="exploration-header">Site Exploration</h2>
             <p style="text-align: center; margin: 1rem; font-weight:bold">↓&emsp;↓&emsp;↓</p>
             <h3>The first ever website:</h3>
             <div class="content">
-                <figure class="iframe">
+                <figure class="iframe" style="margin-bottom: 0;">
                     <iframe src="https://info.cern.ch/hypertext/WWW/TheProject.html"  class="first-website-iframe" title="first-website"></iframe>
                     <figcaption style="text-align: center"><a href="https://info.cern.ch/hypertext/WWW/TheProject.html">https://info.cern.ch/hypertext/WWW/TheProject.html</a></figcaption>
                 </figure>
-                <p>Do you notice anything about it? Do you wonder anything about it?</p>
+                <p>Do you notice anything about it?</p>
+                <p>Do you wonder anything about it?</p>
             </div>
 
-            <h3>Some more sample sites, for later:</h3>
+            <h3>Some more sample sites to look through:</h3>
 
             <div class="content">
                 <figure class="iframe">
                     <iframe src="https://model-sites.starstar.website/" style="font-size:2em"></iframe>
                     <figcaption><a href="https://model-sites.starstar.website/">https://model-sites.starstar.website/</a></figcaption>
+                </figure>
+
+                <h4 style="font-size: 2em">Some random finds from above:</h4>
+
+                <figure class="iframe">
+                    <iframe src="https://mmmo.info/"></iframe>
+                    <figcaption><a href="https://mmmo.info/">https://mmmo.info/</a></figcaption>
+                </figure>
+                <figure class="iframe">
+                    <iframe src="https://jeffy.ca/"></iframe>
+                    <figcaption><a href="https://jeffy.ca/">https://jeffy.ca/</a></figcaption>
+                </figure>
+
+                <h4 style="font-size: 2em">Some Internet Archive finds:</h4>
+                
+                <figure class="iframe">
+                    <iframe src="https://web.archive.org/web/19991013081320id_/http://geocities.com/%7Eintransit1/home/home_frm.html"></iframe>
+                    <figcaption><a href="https://web.archive.org/web/19991013081320/http://geocities.com/%7Eintransit1/home/home_frm.html">http://www.geocities.com/~intransit1/home</a>, October 1999</figcaption>
+                </figure>
+
+                <figure class="iframe">
+                    <iframe src="https://web.archive.org/web/19990209175347id_/http://deafqueer.org/index.html"></iframe>
+                    <figcaption><a href="https://web.archive.org/web/19990209175347/http://deafqueer.org/index.html">http://deafqueer.org/index.html</a>, February 1999</figcaption>
+                </figure>
+
+                <figure class="iframe">
+                    <iframe src="https://web.archive.org/web/19970707084603id_/http://www.critpath.org/docs/webpage.htm"></iframe>
+                    <figcaption><a href="https://web.archive.org/web/19970707084603/http://www.critpath.org/docs/webpage.htm">http://www.critpath.org/docs/webpage.htm</a>, July, 1997 <br>(list of sites hosted by <a href="https://web.archive.org/web/19970707085434/http://www.critpath.org/critpath.htm">The Critical Path AIDS Project</a> in Philadelphia)</figcaption>
                 </figure>
             </div>
 
@@ -258,8 +310,11 @@
 &lt;ul>
     &lt;li>a house?&lt;/li>
     &lt;li>a shelf?&lt;/li>
-    &lt;li>&lt;i>add more here...&lt;/i>&lt;/li>
-&lt;/ul></textarea>
+    &lt;li>add more here...&lt;/li>
+&lt;/ul>
+
+&lt;aside style="font-style: italic;">Write code on the left side of this window, and it will render on the right!&lt;/aside></textarea>
+
                         <textarea for="css">body { 
     font-size: 1.5em; 
 }</textarea>
@@ -277,19 +332,19 @@
                     <li>Begin exploring some possibilities for a collaborative site, look at some model sites</li>
                     <li>Discover what a website is made of</li>
                     <li>Sketch out the structure and content of our personal sites</li>
-                    <li>Learn some brief history of the internet</li>
+                    <li>Learn some brief history of the internet, if we have time</li>
                 </ol>
             </div>
         </section>
 
         <section class="slide" id="collaborative" aria-labelledby="collaborative-header">
-            <h2 id="collaborative-header">Our collaborative website</h2>
+            <h2 id="collaborative-header">Exercise: our collaborative website</h2>
             <div class="content">
                 <p><b>If we were to make a collaborative website about anything, what should it be about?</b></p>
                     
                 <p>ASP, FSS, this room, something that interests all of us, or something else?</p>
 
-                <p>We'll write it on this big sheet of paper over here &rarr;</p>
+                <p>We'll write it on this big sheet of paper over here &rarr;&rarr;&rarr;</p>
             </div>
         </section>
 
@@ -589,6 +644,7 @@ aside {
                     <li>Take out a sheet of paper, and write down a few things you want the site to include.</li>
                     <li>When you're done, take out a different sheet of paper, and format it using header, paragraph, and list tags.</li>
                 </ol>
+                <a href="#exploration">back to sample sites slide</a>
             </div>
         </section>
         
@@ -605,7 +661,7 @@ aside {
                 
                 <p>Hypertext is what makes the web... a web. Links connect pages together.</p>
                 
-                <p>Links are structured with <i>anchor tags</i>, <b>&lt;a></b> and <b>&lt;/a></b>.</p>
+                <p>Links are structured with <i>anchor tags</i>, <b>&lt;a></b> and <b>&lt;/a></b>. The opening tag must contain a <i>hypertext reference</i>, like &lt;a href="https://example.com">.</p>
                 
                 <p>It is always important to make sure your links contain descriptive text, not like:</p>
                   
@@ -614,8 +670,9 @@ aside {
 
                 <p>but like: </p>
 
-                <p style="text-align: center;">"<a href="https://en.wikipedia.org/wiki/Anchor">Here is a link to the Wikipedia page on anchors</a>.</p>
+                <p style="text-align: center;">"<a href="https://en.wikipedia.org/wiki/Anchor">Here is a link to the Wikipedia page on anchors</a>."</p>
 
+                <p>This is that that link looks like: <br>&lt;a href="https://en.wikipedia.org/wiki/Anchor">Here is a link to the Wikipedia page on anchors&lt;/a></p>
                 <p>Why is that important?</p>
             </div>
         </section>
@@ -659,8 +716,8 @@ aside {
             </div>
         </section>
 
-        <section class="slide" id="exercise-1" aria-labelledby="exercise-1-header">
-            <h2 id="exercise-1-header">Next week:</h2>
+        <section class="slide" id="tomorrow" aria-labelledby="tomorrow-header">
+            <h2 id="tomorrow-header">Tomorrow:</h2>
             <div class="content list">
                 <ol style="list-style-type: lower-roman;">
                     <li>learn about CSS styling</li>
