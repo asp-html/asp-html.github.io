@@ -7,6 +7,10 @@
         margin: 0;
     }
 
+    p {
+        font-size: 1.5rem;
+    }
+
     section.slide {
         padding: 1rem;
     }
