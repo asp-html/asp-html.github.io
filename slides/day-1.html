@@ -189,8 +189,8 @@
             width: 0;
         }
 
-        #handmade {
-            position: relative;
+        aside.handmade {
+            /*position: relative;*/
             top: 5px;
             font-weight: bold;
             color: black;
@@ -199,14 +199,26 @@
             background-color: aliceblue;
             margin: 0; 
             padding: 5px;
-            left: -60px;
+            /*left: -60px;*/
             filter: opacity(65%);
         }
 
+        div.handmade {
+            display: flex; 
+            flex-direction: row; 
+            justify-content: space-between; 
+            align-items: flex-start; 
+            margin: 0 -60px;
+        }
+
+        .nomargin li {
+            margin: 0;
+        }
+
         @media screen and (max-width: 768px) {
-            #handmade {
-                left: 0;
-            }  
+            div.handmade {
+                margin: 0;
+            }
         }
 
     </style> 
@@ -214,7 +226,10 @@
 <body>
     <div class="slideshow" id="slideshow">
         <section id="cover" class="slide cover" aria-labelledby="cover-header">
-            <aside id="handmade">this presentation is a <br>handmade HTML document!</aside>
+            <div class="handmade">
+                <aside class="handmade">this presentation is a <br>handmade HTML document!</aside>
+                <aside class="handmade">press Ctrl + U on Chrome to <br>view the source code!</aside>
+            </div>
             <h1 style="margin-top: 10%" id="cover-header">&lt;h1>&ensp;Welcome to Handmade Website Building !&ensp;&lt;/h1></h1>
             <p><i>FSS MS ASP, Fall 2026</i></p>
             <marquee style="width: 400px; margin: 30px auto 0 auto; font-family: 'Redaction 50', serif; font-size: 2rem;" behavior="alternate">Day 1</marquee>
@@ -237,6 +252,7 @@
                     <li><a href="#collaborative">Collaborative website</a></li>
                     <li><a href="#made-of">What is a website made of?</a></li>
                     <li><a href="#markup">What is Markup Language?</a></li>
+                    <li><a href="#anatomy">Anatomy of an HTML element</a></li>
                     <li><a href="#basic-html">Basic HTML Elements</a></li>
                     <li><a href="#exercise-1">Individual exercise</a></li>
                     <li><a href="#hypertext">What is Hypertext?</a></li>
@@ -294,10 +310,10 @@
 
                 <figure class="iframe">
                     <iframe src="https://weirdweboctober.website/"></iframe>
-                    <figcaption><a href="https://weirdweboctober.website/"">https://weirdweboctober.website/</a></figcaption>
+                    <figcaption><a href="https://weirdweboctober.website/"">https://weirdweboctober.website/</a> <br>Each theme contains a list of quick handmade websites!</figcaption>
                 </figure>
 
-                <h4 style="font-size: 2em">Some Internet Archive finds:</h4>
+                <h4 style="font-size: 2em">Some <a href="https://web.archive.org">Internet Archive Wayback Machine</a> finds:</h4>
                 
                 <figure class="iframe">
                     <iframe src="https://web.archive.org/web/19991013081320id_/http://geocities.com/%7Eintransit1/home/home_frm.html"></iframe>
@@ -396,7 +412,7 @@
                     <!--<p style="font-size: 2em; background-color: rgb(255, 255, 159); padding: 10px"><b>J</b>ava <br><b>S</b>cript <br><br>is the muscles, making the site move</p>-->
                 </div>
                 <div class="row-container" style="justify-content: center; align-items: flex-start;">
-                    <p class="house"><b>J</b>ava <br><b>S</b>cript <br><br>is a programming language that allows a site to move and change. We will not be covering it in this workshop.</p>
+                    <p class="house"><b>J</b>ava <br><b>S</b>cript <br><br>is a programming language that allows a site to move and change. <span style="text-decoration: underline">We will not be covering it in this workshop.</span></p>
                 </div>
             </div>
         </section>
@@ -412,7 +428,7 @@
                     <figcaption>"Marked up" homework</figcaption>
                     </figure>
                 </div>
-                <p>"Markup Language" is a way to tell a computer how to understand and display different kinds of text. It forms the skeleton of every website.</p>
+                <p>"Markup Language" is a way to tell a computer how to understand and display different kinds of text. HTML is one form of it, and it forms the skeleton of every website.</p>
                 <p>HTML is structured with <i>tags</i>. Here is the first document defining the very first HTML tags:</p>
                 <figure class="iframe">
                     <iframe src="https://info.cern.ch/hypertext/WWW/MarkUp/Tags.html"  class="first-website-iframe" title="first-website"></iframe>
@@ -566,6 +582,28 @@ aside {
             </div>
         </section>
 
+        <section class="slide" id="anatomy" aria-labelledby="anatomy-header">
+            <h2 id="anatomy-header">HTML element anatomy</h2>
+            <p>HTML opening tags can contain <i>attributes</i>, which tell the computer specific things about that element.</p>
+            <p>They are formatted like &rarr; <b>name="value"</b>, and are inserted into the opening tag</p>
+            <figure style="text-align: center; margin-bottom: 4rem">
+                <img src="images/html-tag-attributes-freeCodeCamp.png" width="100%" alt="">
+                <figcaption>Diagram of an HTML element <br>image source: <a href="https://clearlydecoded.com/anatomy-of-html-tag">clearlydecoded.com</a></figcaption>
+            </figure>
+            <p><i>HTML is very picky about spaces, correct formatting, and correct spelling inside of tags. If something is breaking or not rendering, check this first.</i></p>
+            <h3>Some important attributes are:</h3>
+            <ul class="nomargin">
+                <li>href</li>
+                <li>src</li>
+                <li>alt</li>
+                <li>style</li>
+                <li>id</li>
+                <li>class</li>
+            </ul>
+        </section>
+
+
+
         <section class="slide" id="basic-html" aria-labelledby="basic-html-header">
             <h2 id="basic-html-header">&lt;h2> Fundamental HTML Elements &lt;/h2></h2>
             <p style="text-align: center; margin: 1rem; font-weight:bold">↓&emsp;↓&emsp;↓</p>
@@ -668,7 +706,7 @@ aside {
                 <p>Image element tags are &lt;img>, and must include a <i>source</i> attribute within the tag (src="...") that directs to an image filename or url, like this:</p>
 
                 <code-sandbox console hidden>
-                    <textarea for="html">&lt;img src="https://upload.wikimedia.org/wikipedia/commons/3/3c/Gray_Catbird_%28Dumetella_carolinensis%29.jpg" width="40%">
+                    <textarea for="html">&lt;img src="https://upload.wikimedia.org/wikipedia/commons/3/3c/Gray_Catbird_%28Dumetella_carolinensis%29.jpg" alt="photograph of a gray catbird sitting in a tree" width="40%">
 
 &lt;p>Try swapping out the url above to show a different image!&lt;/p>
 &lt;aside>&lt;i>to copy an image url, just right click any image on the internet, choose "copy image address," and paste it in the src="..." part of the &lt;img> tag&lt;/i>&lt;/aside>
@@ -678,6 +716,8 @@ aside {
 }
                     </textarea>
                 </code-sandbox>
+
+                <p>The <i>alt</i> attribute is also an important part of an image tag&mdash;it provides a text description of the image for site visitors who cannot see or load the image. This ensures the meaning of the image can be conveyed even if it's not there, or if a visitor can't see it for any reason (especially due to disabilities).</p>
 
                 <p>We can embed audio and video too, and will look at that later!</p>
             </div>
@@ -706,9 +746,11 @@ aside {
                     </figure>
                 </div>
                 
-                <p>Hypertext is what makes the web... a web. Links connect pages together.</p>
+                <p><i>Hypertext</i> is what distinguishes HTML from other markup languages, and  is what makes the web... a web. <i>Hypertext</i> means that documents can be connected together with links.</p>
                 
-                <p>Links are structured with <i>anchor tags</i>, <b>&lt;a></b> and <b>&lt;/a></b>. The opening tag must contain a <i>hypertext reference</i>, like &lt;a href="https://example.com">.</p>
+                <p>The default styling of a link is blue underlined text, like this &rarr; <a href="https://en.wikipedia.org/wiki/Hyperlink">this is a link to the Wikipedia page for "hyperlink."</a></p>
+
+                <p>Links are structured with <i>anchor tags</i>, <b>&lt;a></b> and <b>&lt;/a></b>. The opening tag must contain a <i>hypertext reference</i> attribute, like &lt;a href="https://example.com"> (it must contain the full domain, including the "https://" part).</p>
                 
                 <p>It is always important to make sure your links contain descriptive text, not like:</p>
                   
