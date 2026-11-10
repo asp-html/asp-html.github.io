@@ -173,19 +173,20 @@ customElements.define('code-sandbox', class extends HTMLElement {
      * @param  {Element} elem The template element
      * @return {string}       The HTML string
      */
-    createEditor(type, elem) {
-        // Return empty if this editor textarea does not exist in the DOM
-        if (!elem) return '';
 
-        // Get all active editor elements present in the component
-        let activeEditors = [
-            this.querySelector('textarea[for="html"]'),
-            this.querySelector('textarea[for="css"]'),
-            this.querySelector('textarea[for="js"]')
-        ].filter(Boolean);
+	createEditor(type, elem) {
+		// Return empty if this editor textarea does not exist in the DOM
+		if (!elem) return '';
 
-        // Open if it's HTML, or if it is the ONLY editor present
-        let isOpen = type === 'html' || activeEditors.length === 1;
+		// Get all active editor elements present in the component
+		let activeEditors = [
+			this.querySelector('textarea[for="html"]'),
+			this.querySelector('textarea[for="css"]'),
+			this.querySelector('textarea[for="js"]')
+		].filter(Boolean);
+
+		// Open if it has an "open" attribute, if it's HTML, or if it's the ONLY editor
+		let isOpen = elem.hasAttribute('open') || type === 'html' || activeEditors.length === 1;
 
         return `
             <details ${isOpen ? 'open' : ''}>

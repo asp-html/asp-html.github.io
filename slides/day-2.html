@@ -8,6 +8,11 @@
     <link rel="stylesheet" type="text/css" href="code-sandbox.css">
     <link rel="stylesheet" type="text/css" href="slideshow.css">
     <script src="prism.js"></script>
+    <style>
+        h3 {
+            margin-bottom: 0;
+        }
+    </style>
 </head>
 <body>
     <div class="slideshow" id="slideshow">
@@ -36,6 +41,9 @@
                     <li><a href="#todays-goals">Today's Goals</a></li>
                     <li><a href="#tools">Tools</a></li>
                     <li><a href="#setup">Tech Setup</a></li>
+                    <li><a href="#css-intro">CSS Intro</a></li>
+                    <li><a href="#css-properties">CSS Properties</a></li>
+                    <li><a href="#resources">Resources / References</a></li>
                 </ul>
             </nav>
         </section>
@@ -164,7 +172,7 @@
                     <img src="images/example-start.png" alt="HTML screenshot of page setup" width="100%">
                     </li>
                     <li>
-                        Our file is set up! You can edit the file on this site, and save the file from the VSCode window with Ctrl + S or File &rarr; Save.
+                        Our file is set up! You can edit the file on this site, and save the file from the VSCode window with Ctrl + S (or File &rarr; Save).
                     </li>
                     <li>
                         If you'd like to make more documents to link between, or add media to include in your documents, just put them all in your "My ASP Website" folder. Instead of copying URLs in image and link elements, just put the filename.
@@ -179,6 +187,540 @@
                 <p>Alternatively, just open your HTML file in your browser to see it, and refresh that browser page after you save the document in VSCode. The browser view also allows you to interact with links.</p>
             </div>
         </section>
+
+        <section class="slide" id="what-styles" aria-labelledby="what-styles-header">
+            <div class="content" style="justify-content: center; height: 80vh;">
+                <p style="text-align: center;">❓❓❓❓❓❓❓❓</p>
+                <h2 id="what-styles-header">So, how do we style a website?</h2>
+                <p style="text-align: center;">❓❓❓❓❓❓❓❓</p>
+            </div>
+        </section>
+
+        <section class="slide" id="css-intro" aria-labelledby="css-intro-header">
+            <h2 id="css-intro-header">A quick introduction to the structure of CSS</h2>
+            <h3>If we remember from last week, if a website is a house:</h3>
+            <div class="row-container" style="justify-content: space-around; align-items: flex-start;">
+                <p class="house"><b>H</b>yper <br><b>T</b>ext <br><b>M</b>arkup <br><b>L</b>anguage <br><br>is the structure that holds it up.</p>
+                <p class="house"><span style="text-decoration: underline;"><b>C</b>ascading <br><b>S</b>tyle <br><b>S</b>heets</span> <br><br>is the decoration, changing the colors, shapes, and textures.</p>
+            </div>
+            <p>CSS works alongside HTML to style a website. It has totally different structure and rules from HTML.</p>
+
+            <p>This is the fundamental structure of a CSS rule:</p>
+
+            <img src="images/css-diagram.png" alt="diagram of CSS structure" width="100%">
+
+            <p>and this is what that rule does:</p>
+
+            <code-sandbox console hidden>
+                <textarea for="html">&lt;h1>This will be blue&lt;/h1>
+
+&lt;p>In the CSS window below, try to add a rule that changes the background-color of this paragraph element to "coral"&lt;/p>
+                </textarea>
+                <textarea for="css" open>h1 {
+color: blue
+}
+                </textarea>
+            </code-sandbox>
+            
+            <p>Like HTML, CSS is picky, and requires a selector, opening curly bracket, a property with a value separated by a colon, a semicolon at the end of the declaration, and a closing curly bracket.</p>
+
+            <p>If your CSS isn't working, ensure it follows those rules.</p>
+
+            <h3>Location</h3>
+            <p>For our purposes, CSS will go in the &lt;head> element of our documents, surrounded by a &lt;style> element to indicate that it is CSS.</p>
+
+            <h3>CSS Classes</h3>
+
+            <p>A CSS <i>class</i> is a way to apply the same styles selectively to whatever element you want.</p>
+
+            <p>The selector for a class is ".[class-name]"&mdash;it is always started with a period, and must be a single word or words connected with hyphens.</p>
+
+            <p>To apply it to an HTML element use the <i>class</i> tag attribute, like this &rarr; &lt;p class="class-name"> (the period is removed in the attribute)</p>
+
+            <code-sandbox console hidden>
+                <textarea for="html">&lt;h1 class="blue">This heading will be blue, and the text will be white&lt;/h1>
+
+&lt;p class="blue">This paragraph will look the same&lt;/p>
+                </textarea>
+                <textarea for="css" open>.blue {
+    background-color: blue;
+    color: white;
+}
+                </textarea>
+            </code-sandbox>
+
+            <h3>Inline Styling</h3>
+            <p>CSS can also be added in individual elements with the "style" attribute, like this:</p>
+            <code-sandbox console hidden>
+                <textarea for="html">&lt;h1 style="color: coral">This will be coral&lt;/h1>
+                </textarea>
+                <textarea for="css">* {
+    font-size: 1.2rem;
+}
+                </textarea>
+            </code-sandbox>
+        </section>
+
+        <section class="slide" id="css-properties" aria-labelledby="css-properties-header">
+            <h2 id="css-properties-header">CSS Properties</h2>
+            <p>There are a lot more CSS properties than there are HTML elements:</p>
+<pre style="height: 300px; overflow-y: scroll;">
+align-content: value;
+align-items: value;
+align-self: value;
+alignment-adjust: value;
+alignment-baseline: value;
+all: value;
+alt: value;
+animation: value;
+animation-delay: value;
+animation-direction: value;
+animation-duration: value;
+animation-fill-mode: value;
+animation-iteration-count: value;
+animation-name: value;
+animation-play-state: value;
+animation-timing-function: value;
+azimuth: value;
+
+backface-visibility: value;
+background: value;
+background-attachment: value;
+background-clip: value;
+background-color: value;
+background-image: value;
+background-origin: value;
+background-position: value;
+background-repeat: value;
+background-size: value;
+background-blend-mode: value;
+baseline-shift: value;
+bleed: value;
+bookmark-label: value;
+bookmark-level: value;
+bookmark-state: value;
+border: value;
+border-color: value;
+border-style: value;
+border-width: value;
+border-bottom: value;
+border-bottom-color: value;
+border-bottom-style: value;
+border-bottom-width: value;
+border-left: value;
+border-left-color: value;
+border-left-style: value;
+border-left-width: value;
+border-right: value;
+border-right-color: value;
+border-right-style: value;
+border-right-width: value;
+border-top: value;
+border-top-color: value;
+border-top-style: value;
+border-top-width: value;
+border-collapse: value;
+border-image: value;
+border-image-outset: value;
+border-image-repeat: value;
+border-image-slice: value;
+border-image-source: value;
+border-image-width: value;
+border-radius: value;
+border-bottom-left-radius: value;
+border-bottom-right-radius: value;
+border-top-left-radius: value;
+border-top-right-radius: value;
+border-spacing: value;
+bottom: value;
+box-decoration-break: value;
+box-shadow: value;
+box-sizing: value;
+box-snap: value;
+break-after: value;
+break-before: value;
+break-inside: value;
+buffered-rendering: value;
+
+caption-side: value;
+clear: value;
+clear-side: value;
+clip: value;
+clip-path: value;
+clip-rule: value;
+color: value;
+color-adjust: value;
+color-correction: value;
+color-interpolation: value;
+color-interpolation-filters: value;
+color-profile: value;
+color-rendering: value;
+column-fill: value;
+column-gap: value;
+column-rule: value;
+column-rule-color: value;
+column-rule-style: value;
+column-rule-width: value;
+column-span: value;
+columns: value;
+column-count: value;
+column-width: value;
+contain: value;
+content: value;
+counter-increment: value;
+counter-reset: value;
+counter-set: value;
+cue: value;
+cue-after: value;
+cue-before: value;
+cursor: value;
+
+direction: value;
+display: value;
+display-inside: value;
+display-outside: value;
+display-extras: value;
+display-box: value;
+dominant-baseline: value;
+
+elevation: value;
+empty-cells: value;
+enable-background: value;
+
+fill: value;
+fill-opacity: value;
+fill-rule: value;
+filter: value;
+float: value;
+float-defer-column: value;
+float-defer-page: value;
+float-offset: value;
+float-wrap: value;
+flow-into: value;
+flow-from: value;
+flex: value;
+flex-basis: value;
+flex-grow: value;
+flex-shrink: value;
+flex-flow: value;
+flex-direction: value;
+flex-wrap: value;
+flood-color: value;
+flood-opacity: value;
+font: value;
+font-family: value;
+font-size: value;
+font-stretch: value;
+font-style: value;
+font-weight: value;
+font-feature-settings: value;
+font-kerning: value;
+font-language-override: value;
+font-size-adjust: value;
+font-synthesis: value;
+font-variant: value;
+font-variant-alternates: value;
+font-variant-caps: value;
+font-variant-east-asian: value;
+font-variant-ligatures: value;
+font-variant-numeric: value;
+font-variant-position: value;
+footnote-policy: value;
+
+glyph-orientation-horizontal: value;
+glyph-orientation-vertical: value;
+grid: value;
+grid-auto-flow: value;
+grid-auto-columns: value;
+grid-auto-rows: value;
+grid-template: value;
+grid-template-areas: value;
+grid-template-columns: value;
+grid-template-rows: value;
+grid-area: value;
+grid-column: value;
+grid-column-start: value;
+grid-column-end: value;
+grid-row: value;
+grid-row-start: value;
+grid-row-end: value;
+
+hanging-punctuation: value;
+height: value;
+hyphenate-character: value;
+hyphenate-limit-chars: value;
+hyphenate-limit-last: value;
+hyphenate-limit-lines: value;
+hyphenate-limit-zone: value;
+hyphens: value;
+
+icon: value;
+image-orientation: value;
+image-resolution: value;
+image-rendering: value;
+ime: value;
+ime-align: value;
+ime-mode: value;
+ime-offset: value;
+ime-width: value;
+initial-letters: value;
+inline-box-align: value;
+isolation: value;
+
+justify-content: value;
+justify-items: value;
+justify-self: value;
+
+kerning: value;
+
+left: value;
+letter-spacing: value;
+lighting-color: value;
+line-box-contain: value;
+line-break: value;
+line-grid: value;
+line-height: value;
+line-slack: value;
+line-snap: value;
+list-style: value;
+list-style-image: value;
+list-style-position: value;
+list-style-type: value;
+
+margin: value;
+margin-bottom: value;
+margin-left: value;
+margin-right: value;
+margin-top: value;
+marker: value;
+marker-end: value;
+marker-mid: value;
+marker-pattern: value;
+marker-segment: value;
+marker-start: value;
+marker-knockout-left: value;
+marker-knockout-right: value;
+marker-side: value;
+marks: value;
+marquee-direction: value;
+marquee-play-count: value;
+marquee-speed: value;
+marquee-style: value;
+mask: value;
+mask-image: value;
+mask-repeat: value;
+mask-position: value;
+mask-clip: value;
+mask-origin: value;
+mask-size: value;
+mask-box: value;
+mask-box-outset: value;
+mask-box-repeat: value;
+mask-box-slice: value;
+mask-box-source: value;
+mask-box-width: value;
+mask-type: value;
+max-height: value;
+max-lines: value;
+max-width: value;
+min-height: value;
+min-width: value;
+mix-blend-mode: value;
+
+nav-down: value;
+nav-index: value;
+nav-left: value;
+nav-right: value;
+nav-up: value;
+
+object-fit: value;
+object-position: value;
+offset-after: value;
+offset-before: value;
+offset-end: value;
+offset-start: value;
+opacity: value;
+order: value;
+orphans: value;
+outline: value;
+outline-color: value;
+outline-style: value;
+outline-width: value;
+outline-offset: value;
+overflow: value;
+overflow-x: value;
+overflow-y: value;
+overflow-style: value;
+overflow-wrap: value;
+
+padding: value;
+padding-bottom: value;
+padding-left: value;
+padding-right: value;
+padding-top: value;
+page: value;
+page-break-after: value;
+page-break-before: value;
+page-break-inside: value;
+paint-order: value;
+pause: value;
+pause-after: value;
+pause-before: value;
+perspective: value;
+perspective-origin: value;
+pitch: value;
+pitch-range: value;
+play-during: value;
+pointer-events: value;
+position: value;
+
+quotes: value;
+
+region-fragment: value;
+resize: value;
+rest: value;
+rest-after: value;
+rest-before: value;
+richness: value;
+right: value;
+ruby-align: value;
+ruby-merge: value;
+ruby-position: value;
+
+scroll-behavior: value;
+scroll-snap-coordinate: value;
+scroll-snap-destination: value;
+scroll-snap-points-x: value;
+scroll-snap-points-y: value;
+scroll-snap-type: value;
+shape-image-threshold: value;
+shape-inside: value;
+shape-margin: value;
+shape-outside: value;
+shape-padding: value;
+shape-rendering: value;
+size: value;
+speak: value;
+speak-as: value;
+speak-header: value;
+speak-numeral: value;
+speak-punctuation: value;
+speech-rate: value;
+stop-color: value;
+stop-opacity: value;
+stress: value;
+string-set: value;
+stroke: value;
+stroke-dasharray: value;
+stroke-dashoffset: value;
+stroke-linecap: value;
+stroke-linejoin: value;
+stroke-miterlimit: value;
+stroke-opacity: value;
+stroke-width: value;
+
+tab-size: value;
+table-layout: value;
+text-align: value;
+text-align-all: value;
+text-align-last: value;
+text-anchor: value;
+text-combine-upright: value;
+text-decoration: value;
+text-decoration-color: value;
+text-decoration-line: value;
+text-decoration-style: value;
+text-decoration-skip: value;
+text-emphasis: value;
+text-emphasis-color: value;
+text-emphasis-style: value;
+text-emphasis-position: value;
+text-emphasis-skip: value;
+text-height: value;
+text-indent: value;
+text-justify: value;
+text-orientation: value;
+text-overflow: value;
+text-rendering: value;
+text-shadow: value;
+text-size-adjust: value;
+text-space-collapse: value;
+text-spacing: value;
+text-transform: value;
+text-underline-position: value;
+text-wrap: value;
+top: value;
+touch-action: value;
+transform: value;
+transform-box: value;
+transform-origin: value;
+transform-style: value;
+transition: value;
+transition-delay: value;
+transition-duration: value;
+transition-property: value;
+transition-timing-function
+
+unicode-bidi: value;
+
+vector-effect: value;
+vertical-align: value;
+visibility: value;
+voice-balance: value;
+voice-duration: value;
+voice-family: value;
+voice-pitch: value;
+voice-range: value;
+voice-rate: value;
+voice-stress: value;
+voice-volumn: value;
+volume: value;
+
+white-space: value;
+widows: value;
+width: value;
+will-change: value;
+word-break: value;
+word-spacing: value;
+word-wrap: value;
+wrap-flow: value;
+wrap-through: value;
+writing-mode: value;
+
+z-index: value;
+
+--*: value;
+</pre>
+
+            <p>However, there are plenty of resources to find common properties and values of those properties, like sizes, colors, fonts, and display types.</p>
+
+            <h3>Resources:</h3>
+            <ul>
+                <li><a href="https://developer.mozilla.org/en-US/docs/Web/CSS/Reference">Mozilla Developer CSS Reference</a></li>
+                <li><a href="https://www.w3schools.com/cssref/index.php">W3Schools CSS Reference</a></li>
+                <li><a href="https://cssreference.io/">cssreference.io</a></li>
+            </ul>
+        </section>
+
+        <section class="slide" id="resources" aria-labelledby="resources-header">
+            <h2 id="resources-header">Resources!</h2>
+            <p><i>Choose whatever references you like most</i>:</p>
+            <h3>HTML:</h3>
+            <ul>
+                <li><a href="https://developer.mozilla.org/en-US/docs/Web/HTML/Reference">Mozilla Developer HTML Reference</a></li>
+                <li><a href="https://www.w3schools.com/tags/">W3Schools HTML Reference</a></li>
+                <li><a href="https://htmlreference.io/">htmlreference.io</a></li>
+            </ul>
+
+            <h3>CSS</h3>
+            <ul>
+                <li><a href="https://developer.mozilla.org/en-US/docs/Web/CSS/Reference">Mozilla Developer CSS Reference</a></li>
+                <li><a href="https://www.w3schools.com/cssref/index.php">W3Schools CSS Reference</a></li>
+                <li><a href="https://cssreference.io/">cssreference.io</a></li>
+            </ul>
+        </section>
+
+        
     </div>
     
     <script type="module" src="code-sandbox.js"></script>
