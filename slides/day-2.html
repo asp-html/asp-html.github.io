@@ -8,209 +8,36 @@
     <link rel="stylesheet" type="text/css" href="code-sandbox.css">
     <link rel="stylesheet" type="text/css" href="slideshow.css">
     <script src="prism.js"></script>
-    <style type="text/css"> 
-
-        body {
-            font-family: "Geist Pixel", monospace;
-            background: lavenderblush;
-            margin: 0;
-            overflow: hidden;
-        }
-
-        h1, h2 {
-            font-family: "Redaction 50", serif;
-            text-align: center;
-            font-size: 2.5rem;
-            margin: 50px auto 2rem auto;
-        }
-
-        h3 {
-            font-size: 2rem;
-        }
-
-        p, ol, ul, summary {
-            font-size: 2rem;
-        }
-
-        li {
-            margin: 1em 0;
-        }
-
-        li ul li {
-            margin: 0.5rem;
-        }
-
-        div.slideshow {
-            display: flex;
-            overflow-x: scroll;
-            scrollbar-width: none;
-            scroll-snap-type: x mandatory;
-            scroll-behavior: smooth;
-            width: 100%;
-        }
-
-        section.slide {
-            padding: 1rem 6rem;
-            box-sizing: border-box;
-            background: lavenderblush;
-            scroll-snap-align: start;
-            overflow-y: auto;
-            flex: 0 0 100%;
-            width: 100vw;
-            scroll-snap-stop: always; 
-            height: 100dvh;
-        }
-
-        div.content {
-            display: flex;
-            flex-direction: column;
-            justify-content: flex-start;
-        }
-
-        div.list {
-            align-items: center;
-            padding: 0 4rem;
-        }
-
-        .cover * {
-            color: sienna
-        }
-
-        .cover h1 {
-            text-align: left;
-            margin: 0 auto;
-            color: sienna;
-            text-shadow: 2px 2px yellow;
-            font-family: "Geist Pixel", monospace;
-        }
-
-        .cover p {
-            text-align: center;
-            font-size: 2rem;
-            color: sienna;
-            margin-top: 4rem;
-        }
-
-        section.cover {
-            color: black;
-            display: flex;
-            flex-direction: column;
-            justify-content: center;
-            margin-top: 0;
-        }
-
-        section.cover button {
-            width: fit-content;
-            height: fit-content;
-            margin: 0;
-            color: black;
-            padding: 5px;
-            font-size: 2rem;
-            font-family: "Geist Pixel", sans-serif;
-            cursor: pointer;
-        }
-
-        iframe {
-            height: 400px;
-            width: 85%;
-            max-width: 100%;
-            background-color: white;
-        }
-
-        figure {
-            max-width: 100vw;
-        }
-
-        figure.iframe {
-            text-align: center;
-        }
-
-        iframe {
-            width: 100%;
-            height: 450px;
-        }
-
-        figcaption {
-            font-size: 1.3em;
-            text-align: center;
-        }
-
-        .row-container {
-            display: flex;
-            flex-direction: row;
-            justify-content: flex-end;
-            align-items: center;
-        }
-
-        .row-container figure {
-            text-align: center;
-            width: 50%;
-        }
-
-        .row-container figcaption {
-            text-align: center;
-            font-size: 1.2em;
-        }
-
-        .row-container img {
-            width: 70%;
-        }
-
-        code-sandbox {
-            margin: 4rem auto;
-        }
-        
-        #fullscreen {
-            position: relative;
-            bottom: 10px; 
-            left: -80px;
-            width: 30px;
-            filter: opacity(0.5);
-            background: none;
-            border: none;
-        }
-
-        .house { 
-            background: aliceblue; 
-            display: inline-block;
-            height: fit-content;
-            margin-left: 20px;
-            margin-top: 55px; 
-            position: relative; 
-            width: 300px;
-            min-width: 300px;
-            max-width: 300px; 
-            padding: 15px;
-        } 
-
-        .house:before {
-            border-bottom: 50px solid aliceblue;
-            border-left: 165px solid transparent;
-            border-right: 165px solid transparent;
-            content: "";
-            height: 0;
-            left: 0;
-            position: absolute;
-            top: -50px;
-            width: 0;
-        }
-
-        .setup h3, .setup ul{
-            margin: 0;
-        }
-
-    </style> 
 </head>
 <body>
     <div class="slideshow" id="slideshow">
-        <section class="slide cover" id="cover" aria-labelledby="cover-header">
-            <h1 id="cover-header">&lt;h1>&ensp;Handmade Website Building: Day 2!&ensp;&lt;/h1></h1>
+        <section id="cover" class="slide cover" aria-labelledby="cover-header">
+            <div class="handmade">
+                <aside class="handmade">this presentation is a <br>handmade HTML document!</aside>
+                <aside class="handmade">press Ctrl + U on Chrome to <br>view the source code!</aside>
+            </div>
+            <h1 style="margin-top: 10%" id="cover-header">&lt;h1>&ensp;Welcome to Handmade Website Building !&ensp;&lt;/h1></h1>
             <p><i>FSS MS ASP, Fall 2026</i></p>
-            <marquee style="width: 400px; margin: 30px auto 0 auto; font-family: 'Redaction 50'; font-size: 2rem;" direction="right" behavior="alternate"><i>Coming soon...</i></marquee>
-            <div style="display: flex; flex-direction: row; justify-content: space-between; align-items: center; margin: 0; position: relative; bottom: -25%;">
-                <button onclick="openFullscreen();" id="fullBtn">presentation mode</button>
+            <marquee style="width: 400px; margin: 30px auto 0 auto; font-family: 'Redaction 50', serif; font-size: 2rem;" behavior="alternate">Day 2</marquee>
+            <div style="display: flex; flex-direction: row; justify-content: space-between; align-items: center; margin: 0; position: relative; bottom: -18%;">
+                <button onclick="openFullscreen();" id="fullBtn" style="font-size: 120%">presentation mode</button>
                 <p style="color: grey; font-size: 2em; margin: 0">arrow or scroll ⇢</p>
             </div>
+        </section>
+
+        <section class="slide" id="toc" aria-labelledby="toc-header">
+            <h2 id="toc-header">Table of Contents</h2>
+            <nav>
+                <ul>
+                    <li><a href="#cover">Title</a></li>
+                    <li><a href="#toc">Table of Contents</a></li>
+                    <li><a href="#yesterday">Yesterday</a></li>
+                    <li><a href="#handmade-web">What is a handmade website?</a></li>
+                    <li><a href="#todays-goals">Today's Goals</a></li>
+                    <li><a href="#tools">Tools</a></li>
+                    <li><a href="#setup">Setup</a></li>
+                </ul>
+            </nav>
         </section>
 
         <section class="slide" aria-labelledby="yesterday-header" id="yesterday">
@@ -218,8 +45,13 @@
             <code-sandbox console hidden>
                 <textarea for="html">&lt;ul>
     &lt;li>thought about what our websites might be&lt;/li>
-    &lt;li>learned basic HTML: body, headings, paragraphs, lists&lt;/li>
-    &lt;li>wrote down some ideas & formatted them&lt;/li>
+    &lt;li>learned basic HTML: body, headings, paragraphs, lists, and marquee!&lt;/li>
+    &lt;li>made our first HTML documents!&lt;/li>
+&lt;/ul>
+
+&lt;h3>What else did we do?&lt;/h3>
+&lt;ul>
+    &lt;li>list stuff here&lt;/li>
 &lt;/ul>
                 </textarea>
                 <textarea for="css">* {
@@ -229,12 +61,48 @@
             </code-sandbox>
         </section>
 
+        <section class="slide" id="handmade-web" aria-labelledby="handmade-header">
+            <h2 id="handmade-header">What is a handmade website?</h2>
+            <div class="content">
+                <p>A handmade website is a site you create yourself, about whatever you want.</p>
+                <p>All code that makes up the site is generated by only you, your brain, and whatever you type with.</p>
+
+                <h2>Why would we do that?</h2>
+                <p>Handmade website making is the closest way to be understand what the internet is made of. We interact with it every day, so shouldn't we be able to modify it and contribute to it fully on our own?</p>
+                <p>It provides us with the most creative internet freedom we can find.</p>
+                
+                <code-sandbox console hidden>
+                    <textarea for="html">&lt;h3>Other reasons that handmade websites are important:&lt;/h3>
+&lt;ul>
+    &lt;li>list&lt;/li>
+    &lt;li>stuff&lt;/li>
+    &lt;li>here&lt;/li>
+&lt;/ul>
+                    </textarea>
+                    <textarea for="css">* {
+    font-size: 1.2rem
+}
+                    </textarea>
+                </code-sandbox>                
+            </div>
+        </section>
+
+
         <section class="slide" id="todays-goals" aria-labelledby="todays-goals-header">
             <h2 id="todays-goals-header">Today's Goals</h2>
             <div class="content list">
                 <ol style="list-style-type: lower-roman;">
+                    <li>Set up our file system and coding environment</li>
                     <li>Learn about Cascading Stylesheets</li>
+                    <li>Start designing a paper website</li>
+                    <li>Try to transcribe it into code</li>
+                </ol>
 
+                <h3>What we should all have:</h3>
+                <ol style="list-style-type: lower-roman;">
+                    <li>Thoughts about a website</li>
+                    <li>Whatever artmaking supplies you want</li>
+                    <li>A Chromebook</li>
                 </ol>
             </div>
         </section>
@@ -256,7 +124,6 @@
                     <div style="margin: 0 4rem">
                         <h3>Digital tools</h3>
                         <ul>
-                            <li>Google Drive</li>
                             <li><a href="https://vscode.dev">vscode.dev</a></li>
                             <li><a href="https://write.html.energy">write.html.energy</a></li>
                             <li><strong><em>Not AI</em></strong></li>
@@ -266,16 +133,16 @@
             </div>
         </section>
 
-        <section class="slide" id="vscode" aria-labelledby="vscode-header">
-            <h2 id="vscode-header">Setup</h2>
+        <section class="slide" id="setup" aria-labelledby="setup-header">
+            <h2 id="setup-header">Setup</h2>
             <div class="content list setup" style="align-items: flex-start;">
                 <h3>Setting up files:</h3>
                 <ul>
                     <li>
-                        Make a folder in Google Drive titled "website", or something else memorable
+                        Make a folder on your computer titled "My ASP Website"
                     </li>
                     <li>
-                        Create a new file inside that folder, title it "index.html"
+                        Create a new file inside that folder, and title it "index.html"
                     </li>
                 </ul>
                 <h3 style="margin-top: 3rem">Setting up Visual Studio Code</h3>
@@ -284,10 +151,10 @@
                         Visit <a href="https://vscode.dev">vscode.dev</a>
                     </li>
                     <li>
-                        Select "open a folder"
+                        Select "open a folder", and open your "My ASP Website" folder
                     </li>
                     <li>
-                        Open your index.html file
+                        Open your index.html file in the file explorer tab  (<img src="images/explorer-icon.png" alt="file explorer icon" width="18px">)
                     </li>
                     <li>
                         Write: !, and hit enter
@@ -297,10 +164,21 @@
                     <img src="images/example-start.png" alt="HTML screenshot of page setup" width="100%">
                     </li>
                     <li>
-                        Our file is set up! You can save the file from the VSCode window with Cmd + S.
+                        Our file is set up! You can edit the file on this site, and save the file from the VSCode window with Ctrl + S or File &rarr; Save.
+                    </li>
+                    <li>
+                        If you'd like to make more documents to link between, or add media to include in your documents, just put them all in your "My ASP Website" folder. Instead of copying URLs in image and link elements, just put the filename.
                     </li>
                 </ul>
+
+                <h3 style="margin-top: 3rem">File Previewing</h3>
+                <p>Unfortunately, we can't preview files in vscode.dev.</p> 
+                
+                <p>However, you can copy and paste everything in a VSCode window with Ctrl + A &rarr; Ctrl + C, and paste it in a window on <a href="https://write.html.energy">write.html.energy</a> to see the live preview. Then, copy that code and paste it back into VSCode when you want to save it.</p>
+ 
+                <p>Alternatively, just open your HTML file in your browser to see it, and refresh that browser page after you save the document in VSCode. The browser view also allows you to interact with links.</p>
             </div>
+        </section>
     </div>
     
     <script type="module" src="code-sandbox.js"></script>
