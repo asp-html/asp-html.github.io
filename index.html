@@ -15,8 +15,8 @@
             color: black;
             display: flex;
             flex-direction: column;
-            justify-content: center;
-            margin-top: 0;
+            justify-content: flex-start;
+            padding-top: 6rem;
             font-family: "Geist Pixel", monospace;
             align-items: center;
             height: 100vh;
@@ -26,6 +26,14 @@
             list-style-type: none;
             font-weight: bold;
             font-size: 2em
+        }
+
+        .resources ul {
+            list-style-type: disc;
+        }
+
+        details.resources {
+            margin: 3rem 0 0 2.5rem;
         }
 
         li {
@@ -40,8 +48,20 @@
             font-weight: bold
         }
 
+        h2 {
+            text-shadow: 3px 3px yellow;
+            color: saddlebrown;
+            font-size: 2em;
+            font-family: "Redaction 50", monospace;
+            font-weight: bold;
+        }
+
         a::visited {
             color: blue; 
+        }
+
+        .resources li {
+            font-size: 1.5rem;
         }
 
     </style>
@@ -53,7 +73,23 @@
             <li><a href="slides/day-1.html">Monday, Day 1 &mdash; HTML Basics</a></li>
             <li><a href="slides/day-2.html">Tuesday, Day 2 &mdash; Styling & Setup</a></li>
         </ul>
-    </details>
-    
+        <details class="resources">
+            <summary>Resources</summary>
+            <h2>HTML</h2>
+            <ul>
+                <li><a href="https://developer.mozilla.org/en-US/docs/Web/HTML/Reference">Mozilla Developer HTML Reference</a></li>
+                <li><a href="https://www.w3schools.com/tags/">W3Schools HTML Reference</a></li>
+                <li><a href="https://htmlreference.io/">htmlreference.io</a></li>
+            </ul>
+
+            <h2>CSS</h2>
+            <ul>
+                <li><a href="https://developer.mozilla.org/en-US/docs/Web/CSS/Reference">Mozilla Developer CSS Reference</a></li>
+                <li><a href="https://www.w3schools.com/cssref/index.php">W3Schools CSS Reference</a></li>
+                <li><a href="https://cssreference.io/">cssreference.io</a></li>
+                <li><a href="https://www.w3schools.com/css/css3_animations.asp">CSS Animations</a></li>
+                
+            </ul>
+        </details>
 </body>
 </html>
