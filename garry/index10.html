@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Garry.com</title>
+  <style>
+    body {
+      text-align: center;
+      font-family: Arial, sans-serif;
+    }
+    h1 {
+      color: #26348d;
+    }
+    h2 {
+      color: dodgerblue;
+    }
+    h3 {
+      color: #293d44;
+    }
+    form {
+      margin-bottom: 50px;
+      font-size: 30px;
+    }
+    label {
+      margin-right: 15px;
+      cursor: pointer;
+    }
+    .submit-btn {
+      display: inline-block;
+      margin-top: 40px;
+      background-color: #f2866f;
+      color: black;
+      border: none;
+      padding: 10px 20px;
+      font-size: 24px;
+      border-radius: 5px;
+      cursor: pointer;
+    }
+  </style>
+</head>
+<body>
+
+  <h1>Help Garry with his homework</h1>
+  <h2>What is a canine?</h2>
+
+  <form>
+    <label><input type="radio" name="canine"> Cat</label>
+    <label><input type="radio" name="canine"> Gecko</label>
+    <label><input type="radio" name="canine"> Pigeon</label>
+    <label><input type="radio" name="canine"> Sky</label>
+    <br>
+    <button type="button" class="submit-btn" onclick="submitQuiz()">Submit</button>
+  </form>
+
+  <script>
+    function submitQuiz() {
+      // 0.10 equals a 10% chance
+      if (Math.random() < 0.10) {
+        window.location.href = "index14.html";
+      } else {
+        window.location.href = "index11.html";
+      }
+    }
+  </script>
+
+</body>
+</html>

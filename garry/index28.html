@@ -1,0 +1,25 @@
+<style>
+h1 {font-size: 200px;}
+
+</style>
+<h1>Secret extra homework</h1>
+<h2>What is a feline?</h2>  
+  <form>
+    <label><input type="radio" name="feline"> Cat</label>
+    <label><input type="radio" name="feline"> Gatto</label>
+    <label><input type="radio" name="feline"> Cat</label>
+    <label><input type="radio" name="feline"> Cat</label>
+    <br>
+    <button type="button" class="submit-btn" onclick="submitQuiz()">Submit</button>
+  </form>
+
+  <script>
+    function submitQuiz() {
+      // 0.99 equals a 99% chance
+      if (Math.random() < 0.99) {
+        window.location.href = "index29.html";
+      } else {
+        window.location.href = "index30.html";
+      }
+    }
+  </script>
