@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>YouTriedToPunchGreenSnapper</title>
+    <style>
+    body{
+    background-color:#c40215
+    }
+    h1,p{
+    color:black
+    }
+    </style>
+</head>
+<body>
+<center>
+<h1>You punched Green Snapper in one of his closed traps</h1> 
+<p>click next to see if it worked</p>
+<button type="button" class="submit-btn" onclick="submitQuiz()">Next</button>
+<script>
+    function submitQuiz() {
+      // 0.20 equals a 20% chance
+      if (Math.random() < 0.20) {
+        window.location.href = "YouWin.html";
+      } else {
+        window.location.href = "YouEatenForReal.html";
+      }
+    }
+  </script>
+</center>
+</body>
+</html>
