@@ -14,7 +14,7 @@ padding: 10px;}
 </style> 
 <title>Garry.com</title> 
 </head> 
-<body> 
+<body>
 <center> 
 <h1>This is Garry</h1> 
 <h2>He is depressed :(</h2> 
@@ -23,7 +23,82 @@ padding: 10px;}
 </marquee> 
 <a href="index5.html">Back</a>
 <a href="index2.html">Next</a>
-<a href="index16.html">Alternate Universe</a>
-</center> 
+<a href="index16.html">Alternate Dimension</a>
+</center>
+</body>
+</html>
+<html>
+<head>
+  <meta charset="UTF-8">
+  <title>Click Counter</title>
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      text-align: center;
+      margin-top: 50px;
+    }
+    #count-display {
+      font-size: 48px;
+      font-weight: bold;
+      margin: 20px 0;
+    }
+    button {
+      font-size: 18px;
+      padding: 10px 20px;
+      margin: 5px;
+      cursor: pointer;
+    }
+  </style>
+</head>
+<body>
+
+  <!-- 1. HTML Structure -->
+  <h1>Endings Counter /23</h1>
+  <div id="count-display">0</div>
+  <button id="decrease-btn">Decrease</button>
+  <button id="reset-btn">Reset</button>
+  <button id="increase-btn">Increase</button>
+
+  <!-- 2. JavaScript Logic -->
+  <script>
+    const display = document.getElementById('count-display');
+    const increaseBtn = document.getElementById('increase-btn');
+    const decreaseBtn = document.getElementById('decrease-btn');
+    const resetBtn = document.getElementById('reset-btn');
+
+    // Safely load saved count (prevents errors in restricted iframes/file previews)
+    let count = 0;
+    try {
+      count = Number(localStorage.getItem('savedCount')) || 0;
+    } catch (e) {
+      console.warn('localStorage is not available in this environment.');
+    }
+    display.textContent = count;
+
+    function updateCounter() {
+      display.textContent = count;
+      try {
+        localStorage.setItem('savedCount', count);
+      } catch (e) {
+        // Ignore storage errors if blocked by browser security settings
+      }
+    }
+
+    increaseBtn.addEventListener('click', () => {
+      count++;
+      updateCounter();
+    });
+
+    decreaseBtn.addEventListener('click', () => {
+      count--;
+      updateCounter();
+    });
+
+    resetBtn.addEventListener('click', () => {
+      count = 0;
+      updateCounter();
+    });
+  </script>
+
 </body>
 </html>
